@@ -4,7 +4,7 @@
 - 제작자: 강명서, 경재영, 김서윤, 조아영
 - 개발환경
   - minimum SDK : 19
-  - android studio 
+  - android studio dolphin 21.3.1
 
 - 개발 언어
   - Kotlin
