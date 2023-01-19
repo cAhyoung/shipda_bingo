@@ -3,39 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="home"
+        android:id="@+id/home"
         android:enabled="true"
         android:icon="@drawable/common_google_signin_btn_text_dark"
         android:title="home"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
 
     <item
-        android:id="challenge"
+        android:id="@+id/challenge"
         android:enabled="true"
         android:icon="@drawable/common_google_signin_btn_text_dark"
         android:title="home"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
 
     <item
-        android:id="map"
+        android:id="@+id/map"
         android:enabled="true"
         android:icon="@drawable/common_google_signin_btn_text_dark"
         android:title="home"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
 
     <item
-        android:id="gallery"
+        android:id="@+id/gallery"
         android:enabled="true"
         android:icon="@drawable/common_google_signin_btn_text_dark"
         android:title="home"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
 
     <item
-        android:id="mypage"
+        android:id="@+id/mypage"
         android:enabled="true"
         android:icon="@drawable/common_google_signin_btn_text_dark"
         android:title="home"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
 
 
 </menu>
