@@ -11,6 +11,18 @@
         <item>메일함을 정리해볼까요?</item>
         <item>안쓰는 콘센트를 끄거나 뽑아볼까요?</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="challengeRndMissionTxt">
+        <item>텀블러 사용하기</item>
+        <item>손수건 사용하기</item>
+        <item>다회용 용기에 테이크아웃하기</item>
+        <item>걷기</item>
+        <item>메일함 정리하기</item>
+        <item>비건식 먹기</item>
+        <item>플라스틱 라벨 제거하기</item>
+        <item>남은 재료로 요리하기</item>
+    </string-array>
+
+
 </resources>
+

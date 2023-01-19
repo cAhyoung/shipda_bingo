@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChallengeFragment">
+    tools:context=".challenge.ChallengeFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.gridlayout.widget.GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="challenge" />
+        android:layout_height="match_parent">
 
+    </androidx.gridlayout.widget.GridLayout>
 </FrameLayout>

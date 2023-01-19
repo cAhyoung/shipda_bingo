@@ -3,9 +3,11 @@ package com.example.happypig
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
+import com.example.happypig.challenge.ChallengeFragment
+import com.example.happypig.gallery.GalleryFragment
+import com.example.happypig.mypage.MyPageFragment
+import com.example.happypig.map.MapFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import java.util.*
 
 
 class HomeActivity : AppCompatActivity() {
