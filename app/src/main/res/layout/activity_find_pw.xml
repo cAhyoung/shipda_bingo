@@ -4,13 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".FindPwActivity">
 
     <Button
-        android:id="@+id/btnToLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="로그인 페이지로 이동"
-        />
+        android:text="비밀번호 찾기"/>
 
 </LinearLayout>
