@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">HappyPig</string>
+
+    <string-array name="mainRandomTxt">
+        <item>텀블러 사용을 시작해볼까요?</item>
+        <item>손수건 사용을 시작해볼까요?</item>
+        <item>반찬통 사용을 시작해볼까요?</item>
+        <item>가까운 거리는 걸어볼까요?</item>
+        <item>비건식을 먹어볼까요?</item>
+        <item>남은 재료를 사용해볼까요?</item>
+        <item>메일함을 정리해볼까요?</item>
+        <item>안쓰는 콘센트를 끄거나 뽑아볼까요?</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
