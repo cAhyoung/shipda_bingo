@@ -9,7 +9,7 @@
   - android studio dolphin 21.3.1
 
 - 개발 언어
-  - Kotlin
+  - Kotlin 1.7.20
   
 ### 개발 의도
 
