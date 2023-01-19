@@ -58,11 +58,12 @@
             <!-- ad banner -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/adView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
