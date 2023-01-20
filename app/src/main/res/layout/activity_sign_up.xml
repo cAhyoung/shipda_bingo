@@ -10,8 +10,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="24dp"
         android:text="회원가입"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 
     <LinearLayout
@@ -31,7 +35,11 @@
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:text="이메일 *" />
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="5dp"
+                android:text="이메일 *"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -40,9 +48,13 @@
 
                 <EditText
                     android:id="@+id/edtSignUp_email"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/id"
+                    android:hint="  예) swu@gmail.com"
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/img_check_email"
@@ -55,7 +67,10 @@
                     android:id="@+id/btnSignUp_emailCheck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="중복 확인" />
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/login"
+                    android:text="중복 확인"
+                    app:backgroundTint="#018C6A" />
             </LinearLayout>
 
             <TextView
@@ -76,7 +91,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="아이디 *" />
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="5dp"
+                android:text="아이디 *"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -86,10 +105,13 @@
 
                 <EditText
                     android:id="@+id/edtSignUp_id"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="25dp"
                     android:layout_weight="1"
-                    android:hint="예)swu1234" />
+                    android:background="@drawable/id"
+                    android:hint="  예) swu1234"
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/img_check_id"
@@ -102,7 +124,10 @@
                     android:id="@+id/btnSignUp_idCheck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="중복 확인" />
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/login"
+                    android:text="중복 확인"
+                    app:backgroundTint="#018C6A" />
 
             </LinearLayout>
 
@@ -126,7 +151,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="비밀번호 *" />
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="5dp"
+                android:text="비밀번호 *"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -136,10 +165,13 @@
                 <EditText
                     android:id="@+id/edtSignUp_pw"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="25dp"
                     android:layout_weight="1"
-                    android:hint="영문, 숫자 조합 8~16자"
-                    android:inputType="textPassword" />
+                    android:background="@drawable/id"
+                    android:hint="  영문, 숫자 조합 8~16자"
+                    android:inputType="textPassword"
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/img_check_pw"
@@ -168,7 +200,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="비밀번호 확인 *" />
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="5dp"
+                android:text="비밀번호 확인 *"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -178,9 +214,12 @@
                 <EditText
                     android:id="@+id/edtSignUp_pw2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="25dp"
                     android:layout_weight="1"
-                    android:inputType="textPassword" />
+                    android:background="@drawable/id"
+                    android:inputType="textPassword"
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/img_check_pw2"
@@ -208,7 +247,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="닉네임 *" />
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="5dp"
+                android:text="닉네임 *"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -218,9 +261,12 @@
                 <EditText
                     android:id="@+id/edtSignUp_nickname"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="25dp"
                     android:layout_weight="1"
-                    android:hint="예) iamswuny" />
+                    android:background="@drawable/id"
+                    android:hint="  예) iamswuny"
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/img_check_nickname"
@@ -249,12 +295,15 @@
                 android:id="@+id/cbSignUp_emailAgree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="이메일 정보 이용 동의" />
+                android:layout_marginStart="25dp"
+                android:text="이메일 정보 이용 동의"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tvSignUp_readme"
-                android:layout_width="wrap_content"
+                android:layout_width="71dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
                 android:layout_weight="1"
                 android:gravity="right"
                 android:text="이용 약관" />
@@ -271,10 +320,12 @@
     <Button
         android:id="@+id/btnSignUp_SignUp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_gravity="bottom"
         android:enabled="false"
-        android:text="회원가입 완료" />
+        android:text="회원가입 완료"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
 
 </LinearLayout>
