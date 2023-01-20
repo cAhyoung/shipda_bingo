@@ -1,4 +1,4 @@
-package com.example.happypig
+package com.example.happypig.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.happypig.R
 import com.example.happypig.databinding.FragmentHomeBinding
 import java.util.*
 
@@ -41,6 +42,10 @@ class HomeFragment : Fragment() {
         txtViewRnd?.text = txtRes[n].toString()
 
         // 배너광고 -> 잠깐 좀 미룰게요
+
+
+        // 버튼 클릭 시 분리수거 방법
+
 
 
 

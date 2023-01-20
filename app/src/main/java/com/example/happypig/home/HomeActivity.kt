@@ -1,12 +1,11 @@
-package com.example.happypig
+package com.example.happypig.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.happypig.R
 import com.example.happypig.challenge.ChallengeFragment
-import com.example.happypig.gallery.GalleryFragment
 import com.example.happypig.mypage.MyPageFragment
-import com.example.happypig.map.MapFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -16,8 +15,6 @@ class HomeActivity : AppCompatActivity() {
 
     val homeFragment by lazy { HomeFragment() }  // by lazy : 지연 초기화, 최초 사용 시 초기화
     val challengeFragment by lazy { ChallengeFragment() }
-    val mapFragment by lazy { MapFragment() }
-    val galleryFragment by lazy { GalleryFragment() }
     val myPageFragment by lazy { MyPageFragment() }
 
 
@@ -35,14 +32,6 @@ class HomeActivity : AppCompatActivity() {
                 }
                 R.id.challenge -> {
                     loadFragment(challengeFragment)
-                    true
-                }
-                R.id.map -> {
-                    loadFragment(mapFragment)
-                    true
-                }
-                R.id.gallery -> {
-                    loadFragment(galleryFragment)
                     true
                 }
                 R.id.mypage -> {

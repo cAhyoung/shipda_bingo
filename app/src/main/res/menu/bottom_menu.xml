@@ -17,20 +17,6 @@
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/map"
-        android:enabled="true"
-        android:icon="@drawable/common_google_signin_btn_text_dark"
-        android:title="Map"
-        app:showAsAction="ifRoom"/>
-
-    <item
-        android:id="@+id/gallery"
-        android:enabled="true"
-        android:icon="@drawable/common_google_signin_btn_text_dark"
-        android:title="Gallery"
-        app:showAsAction="ifRoom"/>
-
-    <item
         android:id="@+id/mypage"
         android:enabled="true"
         android:icon="@drawable/common_google_signin_btn_text_dark"
