@@ -4,10 +4,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".FindIdActivity">
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="아이디 찾기"/>
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이메일 *"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtFindId_email"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:hint="이메일을 입력해주세요."/>
+            <Button
+                android:id="@+id/btnFindId_sendEmail"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="인증번호 전송"/>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvFindId_warningEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="경고 문구"
+            android:visibility="invisible"
+            android:textColor = "#ff0000"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="인증번호 *"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtFindId_num"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:hint="인증번호를 입력해주세요."/>
+            <Button
+                android:id="@+id/btnFindId_authenticate"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="확인"/>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvFindId_warningNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="경고 문구"
+            android:visibility="invisible"
+            android:textColor = "#ff0000"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아이디"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvFindId_Id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/btnFindId_findId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="아이디 찾기"
+        android:enabled="false"
+        android:layout_gravity="bottom"/>
+
 </LinearLayout>
