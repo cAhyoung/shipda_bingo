@@ -18,21 +18,32 @@
 
 
             <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="30dp"
+                android:id="@+id/imgViewProfile"
+                android:layout_width="10dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 tools:src="@tools:sample/avatars" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5" />
+                <TextView
+                    android:id="@+id/txtViewNick"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="nickname" />
+
+                <TextView
+                    android:id="@+id/txtViewLevel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Lv. 1" />
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
@@ -41,42 +52,57 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="내정보"/>
+
             <Button
+                android:id="@+id/btnMemberInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="개인정보 변경"/>
+                android:text="회원정보 조회"/>
+
+            <Button
+                android:id="@+id/btnChangeNick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="닉네임 변경"/>
+
+
+            <Button
+                android:id="@+id/btnChangePw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="비밀번호 변경"/>
+
+
+            <Button
+                android:id="@+id/btnLogOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="로그아웃"/>
+
+
+            <Button
+                android:id="@+id/btnDeleteInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="회원탈퇴"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="챌린지 현황"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="레벨 n"
-                    android:padding="30dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="아싸 n빙고!"
-                    android:padding="30dp"/>
-
-            </LinearLayout>
+                android:text="기타"/>
 
             <Button
+                android:id="@+id/btnHelp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="도움말"/>
 
             <Button
+                android:id="@+id/btnAnnounce"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="회원탈퇴"/>
