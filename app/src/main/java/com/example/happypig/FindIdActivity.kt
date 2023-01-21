@@ -1,5 +1,6 @@
 package com.example.happypig
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
@@ -9,6 +10,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
@@ -21,29 +23,33 @@ class FindIdActivity : AppCompatActivity() {
     lateinit var sqlitedb: SQLiteDatabase
 
     lateinit var edtFindId_email : EditText
-    lateinit var edtFindId_num : EditText
+    //lateinit var edtFindId_num : EditText
 
     lateinit var btnFindId_sendEmail : Button
-    lateinit var btnFindId_authenticate : Button
-    lateinit var btnFindId_findId : Button
+    //lateinit var btnFindId_authenticate : Button
+    //lateinit var btnFindId_findId : Button
 
     lateinit var tvFindId_Id : TextView
     lateinit var tvFindId_warningEmail : TextView
-    lateinit var tvFindId_warningNum : TextView
+    //lateinit var tvFindId_warningNum : TextView
+
+    lateinit var layoutFindId_layout : LinearLayout
 
 
+    @SuppressLint("Range")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_find_id)
 
         edtFindId_email = findViewById(R.id.edtFindId_email)
-        edtFindId_num = findViewById(R.id.edtFindId_num)
+        //edtFindId_num = findViewById(R.id.edtFindId_num)
         btnFindId_sendEmail = findViewById(R.id.btnFindId_sendEmail)
-        btnFindId_authenticate = findViewById(R.id.btnFindId_authenticate)
-        btnFindId_findId = findViewById(R.id.btnFindId_findId)
+        //btnFindId_authenticate = findViewById(R.id.btnFindId_authenticate)
+        //btnFindId_findId = findViewById(R.id.btnFindId_findId)
         tvFindId_Id = findViewById(R.id.tvFindId_Id)
         tvFindId_warningEmail = findViewById(R.id.tvFindId_warningEmail)
-        tvFindId_warningNum = findViewById(R.id.tvFindId_warningNum)
+        //tvFindId_warningNum = findViewById(R.id.tvFindId_warningNum)
+        layoutFindId_layout = findViewById(R.id.layoutFindId_layout)
 
         dbManager = DBManager(this, "guruDB", null, 1)
 
@@ -87,11 +93,19 @@ class FindIdActivity : AppCompatActivity() {
                 //디비에 이메일이 존재하는지 확인
                 sqlitedb = dbManager.readableDatabase
                 var cursor : Cursor
-                cursor = sqlitedb.rawQuery("SELECT email FROM personnel WHERE email = '" + inputEmail + "';",null)
+                cursor = sqlitedb.rawQuery("SELECT id FROM personnel WHERE email = '" + inputEmail + "';",null)
 
                 if(cursor.moveToNext()){
+
+                    val id = cursor.getString(cursor.getColumnIndex("id")).toString()
+
+                    tvFindId_Id.text = id
+
+                    layoutFindId_layout.visibility = View.VISIBLE
+
                     //디비에 존재하는 이메일
                     //이메일로 인증 번호 전송
+                    /*
                     val emailAddress = inputEmail
                     val title = "[빙고 챌린지] 아이디 찾기 인증번호입니다"
 
@@ -115,6 +129,8 @@ class FindIdActivity : AppCompatActivity() {
                     else {
                         Toast.makeText(this, "메일을 전송할 수 없습니다.", Toast.LENGTH_SHORT).show()
                     }
+
+                     */
                     
                 }
                 else {

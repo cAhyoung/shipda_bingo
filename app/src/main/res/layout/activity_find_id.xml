@@ -32,7 +32,7 @@
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:enabled="false"
-                android:text="인증번호 전송"/>
+                android:text="아이디 찾기"/>
 
         </LinearLayout>
         <TextView
@@ -45,6 +45,7 @@
             />
     </LinearLayout>
 
+    <!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -83,8 +84,10 @@
             />
     </LinearLayout>
 
+  -->
 
     <LinearLayout
+        android:id="@+id/layoutFindId_layout"
         android:layout_marginTop="200dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -110,10 +113,12 @@
         </LinearLayout>
     </LinearLayout>
 
+    <!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"/>
+
 
     <Button
         android:id="@+id/btnFindId_findId"
@@ -122,5 +127,6 @@
         android:text="아이디 찾기"
         android:enabled="false"
         android:layout_gravity="bottom"/>
+        -->
 
 </LinearLayout>
