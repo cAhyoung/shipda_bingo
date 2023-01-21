@@ -490,8 +490,10 @@ class SignUpActivity : AppCompatActivity() {
             var pw: String = edtSignUp_pw.text.toString()
             var email: String = edtSignUp_email.text.toString()
 
+            val lv = 1
+
             sqlitedb = dbManager.writableDatabase
-            sqlitedb.execSQL("INSERT INTO personnel VALUES ('" + id + "', '" + pw + "', '" + nickname + "', '" + email + "');")
+            sqlitedb.execSQL("INSERT INTO personnel VALUES ('" + id + "', '" + pw + "', '" + nickname + "', '" + email + "', '" + lv + "');")
             sqlitedb.close()
 
             //val intent = Intent(this, /*홈화면 액티비티*/)

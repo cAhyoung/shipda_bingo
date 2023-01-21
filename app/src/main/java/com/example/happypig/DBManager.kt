@@ -11,7 +11,7 @@ class DBManager(
     version: Int
 ) : SQLiteOpenHelper(context, name, factory, version) {
     override fun onCreate(p0: SQLiteDatabase?) {
-        p0!!.execSQL("CREATE TABLE personnel (id text PRIMARY KEY, pw text, nickname text, email text)")
+        p0!!.execSQL("CREATE TABLE personnel (id text PRIMARY KEY, pw text, nickname text, email text, lv INTEGER)")
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
