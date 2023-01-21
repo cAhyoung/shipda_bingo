@@ -29,7 +29,8 @@
                     android:id="@+id/imgViewProfile"
                     android:layout_width="110dp"
                     android:layout_height="match_parent"
-                    android:padding="16dp" />
+                    android:padding="16dp"
+                    android:src = "@drawable/person"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -49,6 +50,11 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1" />
 
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/adView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
 
                 </LinearLayout>
 
@@ -61,11 +67,6 @@
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 android:orientation="horizontal">
-
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/adView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
 
 
             </LinearLayout>
@@ -81,28 +82,44 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
 
                     <ImageButton
                         android:id="@+id/btnTrash"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        tools:srcCompat="@tools:sample/avatars" />
+                        android:adjustViewBounds="true"
+                        tools:srcCompat="@drawable/trash_btn"
+                        android:background="#0000000"
+                        android:scaleType="fitXY"
+                        android:paddingRight="5dp"
+                        />
 
                     <ImageButton
                         android:id="@+id/btnGlass"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        tools:srcCompat="@tools:sample/avatars" />
+                        android:adjustViewBounds="true"
+                        tools:srcCompat="@drawable/glass_btn"
+                        android:background="#0000000"
+                        android:scaleType="fitXY"
+                        android:paddingRight="5dp"
+                        />
 
                     <ImageButton
                         android:id="@+id/btnPaper"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        tools:srcCompat="@tools:sample/avatars" />
+                        android:adjustViewBounds="true"
+                        tools:srcCompat="@drawable/paper_btn"
+                        android:background="#0000000"
+                        android:scaleType="fitXY"
+                        />
 
                 </LinearLayout>
 
@@ -110,28 +127,41 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    >
 
                     <ImageButton
                         android:id="@+id/btnPlastic"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        tools:srcCompat="@tools:sample/avatars" />
+                        tools:srcCompat="@drawable/plastic_btn"
+                        android:background="#0000000"
+                        android:scaleType="fitXY"
+                        android:paddingRight="5dp"
+                        />
 
                     <ImageButton
                         android:id="@+id/btnVinyl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        tools:srcCompat="@tools:sample/avatars" />
+                        tools:srcCompat="@drawable/vinyl_btn"
+                        android:background="#0000000"
+                        android:scaleType="fitXY"
+                        android:paddingRight="5dp"/>
 
                     <ImageButton
                         android:id="@+id/btnCan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        tools:srcCompat="@tools:sample/avatars" />
+                        tools:srcCompat="@drawable/can_btn"
+                        android:background="#0000000"
+                        android:scaleType="fitXY"/>
 
                 </LinearLayout>
 

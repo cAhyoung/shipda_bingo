@@ -3,23 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/challenge"
         android:enabled="true"
-        android:icon="@drawable/common_google_signin_btn_text_dark"
-        android:title="Home"
+        android:icon="@drawable/bingo_btn"
+        android:title="Bingo"
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/challenge"
+        android:id="@+id/home"
         android:enabled="true"
-        android:icon="@drawable/common_google_signin_btn_text_dark"
-        android:title="Challenge"
-        app:showAsAction="ifRoom"/>
+        android:icon="@drawable/홈_white"
+        android:title="Home" />
 
     <item
         android:id="@+id/mypage"
         android:enabled="true"
-        android:icon="@drawable/common_google_signin_btn_text_dark"
+        android:icon="@drawable/마이페이지_white"
         android:title="MyPage"
         app:showAsAction="ifRoom"/>
 
