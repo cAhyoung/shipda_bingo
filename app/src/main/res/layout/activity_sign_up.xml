@@ -336,6 +336,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="bottom"
+                    android:layout_marginTop="40dp"
                     android:background="@drawable/btn_pho_login"
                     android:enabled="false"
                     android:text="회원가입 완료"
