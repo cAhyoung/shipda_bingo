@@ -62,11 +62,11 @@
 
                         <EditText
                             android:id="@+id/edtSignUp_email"
-                            android:layout_width="match_parent"
+                            android:layout_width="173dp"
                             android:layout_height="50dp"
                             android:layout_marginStart="25dp"
                             android:layout_weight="1"
-                            android:background="@drawable/id"
+                            android:background="@drawable/btn_pho_id"
                             android:hint="  예) swu@gmail.com"
                             android:textSize="16sp" />
 
@@ -79,12 +79,13 @@
 
                         <Button
                             android:id="@+id/btnSignUp_emailCheck"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="95dp"
+                            android:layout_height="match_parent"
                             android:layout_marginEnd="25dp"
-                            android:background="@drawable/login"
+                            android:background="@drawable/btn_pho_login"
                             android:text="중복 확인"
                             app:backgroundTint="#018C6A" />
+
                     </LinearLayout>
 
                     <TextView
@@ -124,7 +125,7 @@
                             android:layout_height="50dp"
                             android:layout_marginStart="25dp"
                             android:layout_weight="1"
-                            android:background="@drawable/id"
+                            android:background="@drawable/btn_pho_id"
                             android:hint="  예) swu1234"
                             android:textSize="16sp" />
 
@@ -137,12 +138,13 @@
 
                         <Button
                             android:id="@+id/btnSignUp_idCheck"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="95dp"
+                            android:layout_height="match_parent"
                             android:layout_marginEnd="25dp"
-                            android:background="@drawable/login"
+                            android:background="@drawable/btn_pho_login"
                             android:text="중복 확인"
                             app:backgroundTint="#018C6A" />
+
 
                     </LinearLayout>
 
@@ -184,7 +186,7 @@
                             android:layout_height="50dp"
                             android:layout_marginStart="25dp"
                             android:layout_weight="1"
-                            android:background="@drawable/id"
+                            android:background="@drawable/btn_pho_id"
                             android:hint="  영문, 숫자 조합 8~16자"
                             android:inputType="textPassword"
                             android:textSize="16sp" />
@@ -234,7 +236,7 @@
                             android:layout_height="50dp"
                             android:layout_marginStart="25dp"
                             android:layout_weight="1"
-                            android:background="@drawable/id"
+                            android:background="@drawable/btn_pho_id"
                             android:inputType="textPassword"
                             android:textSize="16sp" />
 
@@ -282,7 +284,7 @@
                             android:layout_height="50dp"
                             android:layout_marginStart="25dp"
                             android:layout_weight="1"
-                            android:background="@drawable/id"
+                            android:background="@drawable/btn_pho_id"
                             android:hint="  예) iamswuny"
                             android:textSize="16sp" />
 
@@ -334,11 +336,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/login"
+                    android:background="@drawable/btn_pho_login"
                     android:enabled="false"
                     android:text="회원가입 완료"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:backgroundTint="#018C6A" />
 
             </LinearLayout>
         </LinearLayout>
