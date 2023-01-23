@@ -15,30 +15,46 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="50dp"
             android:text="이메일 *"
-            />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="65dp">
 
             <EditText
                 android:id="@+id/edtFindId_email"
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:hint="이메일을 입력해주세요."/>
+                android:layout_width="220dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/btn_pho_id"
+                android:hint="  이메일을 입력해주세요."
+                android:textSize="16sp" />
+
             <Button
                 android:id="@+id/btnFindId_sendEmail"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginright="25dp"
+                android:background="@drawable/btn_pho_login"
                 android:enabled="false"
-                android:text="아이디 찾기"/>
+                android:text="아이디 찾기"
+                android:textColor="#FFFFFF"
+                app:backgroundTint="#018C6A" />
 
         </LinearLayout>
+        
         <TextView
             android:id="@+id/tvFindId_warningEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
             android:text="경고 문구"
             android:visibility="invisible"
             android:textColor = "#ff0000"
@@ -97,18 +113,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
             android:text="아이디"
-            />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="65dp">
 
             <TextView
                 android:id="@+id/tvFindId_Id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="5dp" />
 
         </LinearLayout>
     </LinearLayout>
