@@ -253,6 +253,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="25dp"
+                        android:layout_marginTop="1dp"
                         android:text="경고문구"
                         android:textColor="#ff0000"
                         android:textSize="10sp"
@@ -340,6 +341,7 @@
                     android:background="@drawable/btn_pho_login"
                     android:enabled="false"
                     android:text="회원가입 완료"
+                    android:textColor="#FFFFFF"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:backgroundTint="#018C6A" />
