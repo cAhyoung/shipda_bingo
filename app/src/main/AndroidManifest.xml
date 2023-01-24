@@ -13,8 +13,36 @@
         android:theme="@style/Theme.HappyPig"
         tools:targetApi="31">
         <activity
-            android:name=".MemberInfo"
+            android:name=".mypage.Announce"
             android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".mypage.Help"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".mypage.ChangeNick"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".mypage.ChangePw"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".mypage.MemberInfo"
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

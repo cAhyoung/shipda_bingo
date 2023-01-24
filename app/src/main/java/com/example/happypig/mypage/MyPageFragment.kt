@@ -14,14 +14,16 @@ import com.example.happypig.databinding.FragmentMyPageBinding
 
 class MyPageFragment : Fragment() {
 
-    lateinit var binding : FragmentMyPageBinding
-
     // 내정보
     lateinit var btnMemberInfo : Button
     lateinit var btnChangeNick : Button
     lateinit var btnChangePw : Button
     lateinit var btnLogout : Button
     lateinit var btnDeleteInfo : Button
+
+    // 기타
+    lateinit var btnHelp : Button
+    lateinit var btnAnnounce : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,23 +34,72 @@ class MyPageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMyPageBinding.inflate(layoutInflater)
 
-        btnMemberInfo = binding.btnMemberInfo
-        btnChangeNick = binding.btnChangeNick
-        btnChangePw = binding.btnChangePw
-        btnLogout = binding.btnLogOut
-        btnDeleteInfo = binding.btnDeleteInfo
+        val view = inflater.inflate(R.layout.fragment_my_page, container, false)
+
+        // my info
+
+        btnMemberInfo = view.findViewById(R.id.btnMemberInfo)
+        btnChangeNick = view.findViewById(R.id.btnChangeNick)
+        btnChangePw = view.findViewById(R.id.btnChangePw)
+        btnLogout = view.findViewById(R.id.btnLogOut)
+        btnDeleteInfo = view.findViewById(R.id.btnDeleteInfo)
 
         btnMemberInfo.setOnClickListener {
-            val intent = Intent(getActivity(), MemberInfo::class.java)
-            startActivity(intent)
-
+                val intent = Intent(getActivity(), MemberInfo::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                startActivity(intent)
 
         }
 
+        btnChangeNick.setOnClickListener {
+            val intent = Intent(getActivity(), ChangeNick::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(intent)
 
-        return inflater.inflate(R.layout.fragment_my_page, container, false)
+        }
+
+        btnChangePw.setOnClickListener {
+            val intent = Intent(getActivity(), ChangePw::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(intent)
+
+        }
+
+        // Dialog 띄우기
+        btnLogout.setOnClickListener {
+            val intent = Intent(getActivity(), MemberInfo::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(intent)
+
+        }
+
+        btnDeleteInfo.setOnClickListener {
+            val intent = Intent(getActivity(), MemberInfo::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(intent)
+
+        }
+
+        // else
+        btnHelp = view.findViewById(R.id.btnHelp)
+        btnAnnounce = view.findViewById(R.id.btnAnnounce)
+
+
+        btnHelp.setOnClickListener {
+            val intent = Intent(getActivity(), Help::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(intent)
+        }
+
+        btnAnnounce.setOnClickListener {
+            val intent = Intent(getActivity(), Announce::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(intent)
+        }
+
+
+        return view
 
     }
 
