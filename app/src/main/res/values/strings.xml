@@ -1,4 +1,65 @@
 <resources>
     <string name="app_name">HappyPig</string>
     <string name="emailAgree">이메일 사용 이용 약관에 대한 내용입니다. 수정이 필요합니다.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string-array name="level1">
+        <item>패스트 패션\n알아보기\n(링크)</item>
+        <item>비건 알아보기\n(링크)</item>
+        <item>의약 폐기물\n알아보기\n(링크)</item>
+        <item>메일함\n정리하기</item>
+        <item>콘센트 뽑기</item>
+        <item>플라스틱\n라벨 제거하고\n배출하기</item>
+        <item>다회용 용기에\n포장하기</item>
+        <item>손수건\n사용하기</item>
+        <item>일회용 수저 안 받기</item>
+        <item>장바구니\n사용하기</item>
+        <item>플라스틱 용기\n씻어서 배출</item>
+        <item>양치컵\n사용하기</item>
+        <item>행주 사용하기\n</item>
+        <item>앱 홍보하기</item>
+        <item>이면지\n사용하기</item>
+        <item>면마스크\n사용하기</item>
+        <item>마스크 줄 잘라서 배출하기</item> <!-- 17개 -->
+    </string-array>
+
+    <string-array name="level2">
+        <item>패스트 패션\n알아보기\n(링크)</item>
+        <item>비건 알아보기\n(링크)</item>
+        <item>의약 폐기물\n알아보기\n(링크)</item>
+        <item>메일함\n정리하기</item>
+        <item>콘센트 뽑기</item>
+        <item>다회용 용기에\n포장하기</item>
+        <item>비건식 먹기</item>
+        <item>장바구니\n사용하기</item>
+        <item>플라스틱 용기\n씻어서 배출</item>
+        <item>샴푸바\n사용하기</item>
+        <item>안 쓰는 물건\n기부하기</item>
+        <item>중고 물품\n사용하기</item>
+        <item>잔반 챌린지\n(남기지 않기)</item>
+        <item>이면지\n사용하기</item>
+        <item>면마스크\n사용하기</item>
+        <item>마스크 줄 잘라서 배출하기</item><!-- 16개 -->
+    </string-array>
+
+    <string-array name="level3">
+        <item>패스트 패션\n알아보기\n(링크)</item>
+        <item>비건 알아보기\n(링크)</item>
+        <item>의약 폐기물\n알아보기\n(링크)</item>
+        <item>기부하기\n(링크)</item>
+        <item>프로젝트 참여(링크)</item>
+        <item>플로깅 하기</item>
+        <item>다회용 용기에\n포장하기</item>
+        <item>비건식 먹기</item>
+        <item>플라스틱 용기\n씻어서 배출</item>
+        <item>샴푸바\n사용하기</item>
+        <item>안 쓰는 물건\n기부하기</item>
+        <item>중고 물품\n사용하기</item>
+        <item>잔반 챌린지\n(남기지 않기)</item>
+        <item>이면지\n사용하기</item>
+        <item>면마스크\n사용하기</item>
+        <item>마스크 줄 잘라서 배출하기</item><!-- 16개 -->
+    </string-array>
 </resources>
