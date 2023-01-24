@@ -79,9 +79,13 @@ class LoginActivity : AppCompatActivity() {
                         val dbPW = cursor.getString(cursor.getColumnIndex("pw")).toString()
 
                         if (pass == dbPW) {
-                            Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
-                            //홈 화면으로 액티비티 전혼하기
+                            //Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
+                            //홈 화면으로 액티비티 전환하기
                             //intent에 id 값 넣어서
+                            intent = Intent(this, HomeActivity2::class.java)
+                            intent.putExtra("id",user)
+                            startActivity(intent)
+
                         } else {
                             Toast.makeText(this, "비밀번호가 틀렸습니다.", Toast.LENGTH_SHORT).show()
                         }

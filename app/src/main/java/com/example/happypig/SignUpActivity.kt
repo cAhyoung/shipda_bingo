@@ -244,6 +244,10 @@ class SignUpActivity : AppCompatActivity() {
                     //클래스 함수
                     signUpCheck.pwFlag = false
 
+                    if(edtSignUp_pw2.length() == 0){
+                        tvSignUp_warning_pw2.visibility = View.INVISIBLE
+                    }
+
                 }
 
                 //비밀 번호 입력을 지웠을 때 경구문구 삭제
@@ -301,6 +305,9 @@ class SignUpActivity : AppCompatActivity() {
                         img_check_pw2.visibility = View.INVISIBLE
 
                         pw2Flag = false
+                        if(edtSignUp_pw2.length() == 0){
+                            tvSignUp_warning_pw2.visibility = View.INVISIBLE
+                        }
 
 
                         //클래스 함수
@@ -348,7 +355,7 @@ class SignUpActivity : AppCompatActivity() {
             if (edtSignUp_email.length() == 0) {
                 //email 값이 null이라면 토스트 메시지 출력
                 //이거 나중에 지우기
-                Toast.makeText(this, "이메일을 먼저 입력해주세요", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, "이메일을 먼저 입력해주세요", Toast.LENGTH_SHORT).show()
 
 
                 //경고 문구 출력
@@ -387,6 +394,11 @@ class SignUpActivity : AppCompatActivity() {
 
                     //클래스 함수
                     signUpCheck.emailFlag = false
+
+                    //입력이 한 글자라도 들어오면 경고 문구 지우기
+                    edtSignUp_email.addTextChangedListener {
+                        tvSignUp_warning_email.setVisibility(View.INVISIBLE)
+                    }
 
                 } else {
                     //이메일 형식 만족
@@ -490,17 +502,18 @@ class SignUpActivity : AppCompatActivity() {
             var pw: String = edtSignUp_pw.text.toString()
             var email: String = edtSignUp_email.text.toString()
 
-            val lv = 1
+            val lv = 0
 
             sqlitedb = dbManager.writableDatabase
             sqlitedb.execSQL("INSERT INTO personnel VALUES ('" + id + "', '" + pw + "', '" + nickname + "', '" + email + "', '" + lv + "');")
             sqlitedb.close()
 
-            //val intent = Intent(this, /*홈화면 액티비티*/)
-            //intent.putExtra("id",id)
-            //startActivity(intent)
+           //홈 화면으로 전환
+            intent = Intent(this, HomeActivity2::class.java)
+            intent.putExtra("id", id)
+            startActivity(intent)
 
-            Toast.makeText(this, "$nickname 님 회원가입이 완료되었습니다", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "$nickname 님 회원가입이 완료되었습니다", Toast.LENGTH_SHORT).show()
 
         }
 
