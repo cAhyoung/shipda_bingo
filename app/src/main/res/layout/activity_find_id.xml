@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:text="이메일 *"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -41,7 +41,6 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginright="25dp"
                 android:background="@drawable/btn_pho_login"
                 android:enabled="false"
                 android:text="아이디 찾기"

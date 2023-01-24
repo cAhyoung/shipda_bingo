@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:text="아이디 *"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -126,7 +126,7 @@
         android:id="@+id/btnFindPw_findPw"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/btn_pho_login"
         android:enabled="false"
         android:text="비밀번호 찾기"

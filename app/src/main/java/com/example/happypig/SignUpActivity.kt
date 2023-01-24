@@ -1,22 +1,17 @@
 package com.example.happypig
 
-import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Patterns
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.MimeTypeFilter.matches
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import org.w3c.dom.Text
 import java.util.regex.Pattern
-import java.util.regex.Pattern.matches
+
+
 
 //회원가입 페이지
 class SignUpActivity : AppCompatActivity() {
