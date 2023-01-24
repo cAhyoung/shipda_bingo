@@ -98,12 +98,12 @@ class HomeFragment : Fragment() {
 
         var dialogView = View.inflate(context, R.layout.dialog, null)
 
-        val trash = dialogView.findViewById<ImageView>(R.id.btnTrash)
-        val glass = dialogView.findViewById<ImageView>(R.id.btnGlass)
-        val paper = dialogView.findViewById<ImageView>(R.id.btnPaper)
-        val plastic = dialogView.findViewById<ImageView>(R.id.btnPlastic)
-        val vinyl = dialogView.findViewById<ImageView>(R.id.btnVinyl)
-        val can = dialogView.findViewById<ImageView>(R.id.btnCan)
+        val trash = dialogView.findViewById<ImageView>(R.id.trash)
+        val glass = dialogView.findViewById<ImageView>(R.id.glass)
+        val paper = dialogView.findViewById<ImageView>(R.id.paper)
+        val plastic = dialogView.findViewById<ImageView>(R.id.plastic)
+        val vinyl = dialogView.findViewById<ImageView>(R.id.vinyl)
+        val can = dialogView.findViewById<ImageView>(R.id.can)
 
         var dialog = AlertDialog.Builder(context)
 

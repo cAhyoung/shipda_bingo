@@ -93,7 +93,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:adjustViewBounds="true"
-                        tools:srcCompat="@drawable/trash_btn"
+                        android:src="@drawable/trash_btn"
                         android:scaleType="fitXY"
                         android:paddingRight="5dp"
                         />
@@ -104,7 +104,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:adjustViewBounds="true"
-                        tools:srcCompat="@drawable/glass_btn"
+                        android:src="@drawable/glass_btn"
                         android:scaleType="fitXY"
                         android:paddingRight="5dp"
                         />
@@ -115,7 +115,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:adjustViewBounds="true"
-                        tools:srcCompat="@drawable/paper_btn"
+                        android:src="@drawable/paper_btn"
                         android:scaleType="fitXY"
                         />
 
@@ -137,7 +137,7 @@
                         android:layout_weight="1"
                         android:paddingRight="5dp"
                         android:scaleType="fitXY"
-                        tools:srcCompat="@drawable/plastic_btn" />
+                        android:src="@drawable/plastic_btn" />
 
                     <ImageButton
                         android:id="@+id/btnVinyl"
@@ -146,7 +146,7 @@
                         android:layout_weight="1"
                         android:paddingRight="5dp"
                         android:scaleType="fitXY"
-                        tools:srcCompat="@drawable/vinyl_btn" />
+                        android:src="@drawable/vinyl_btn" />
 
                     <ImageButton
                         android:id="@+id/btnCan"
@@ -154,7 +154,7 @@
                         android:layout_height="139dp"
                         android:layout_weight="1"
                         android:scaleType="fitXY"
-                        tools:srcCompat="@drawable/can_btn" />
+                        android:src="@drawable/can_btn" />
 
                 </LinearLayout>
 
