@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.isInvisible
 import com.example.happypig.MainActivity
 import com.example.happypig.R
 import com.example.happypig.databinding.FragmentHomeBinding
@@ -20,10 +21,6 @@ import java.util.*
 class HomeFragment : Fragment() {
 
     private lateinit var binding : FragmentHomeBinding
-
-    lateinit var imgViewProfile : ImageView
-    lateinit var txtViewNick : TextView
-    lateinit var txtViewRnd : TextView
 
     lateinit var btnTrash : ImageButton
     lateinit var btnGlass: ImageButton
@@ -41,16 +38,8 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         // 랜덤으로 문구 가져오는 코드
+        // 만보기로 대체
 
-        binding = FragmentHomeBinding.inflate(layoutInflater)
-        txtViewRnd = binding.txtViewRnd
-
-        var txtRes = resources.getStringArray(R.array.mainRandomTxt)
-        var rnd = Random()
-
-        var n = rnd.nextInt(txtRes.size - 1)
-
-        txtViewRnd?.text = txtRes[n].toString()
 
         // 배너광고 -> 잠깐 좀 미룰게요
 
