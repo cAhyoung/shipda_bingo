@@ -84,7 +84,8 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingLeft="10dp"
-                    android:paddingRight="10dp">
+                    android:paddingRight="10dp"
+                    android:layout_weight="1">
 
                     <ImageButton
                         android:id="@+id/btnTrash"
@@ -93,7 +94,6 @@
                         android:layout_weight="1"
                         android:adjustViewBounds="true"
                         tools:srcCompat="@drawable/trash_btn"
-                        android:background="#0000000"
                         android:scaleType="fitXY"
                         android:paddingRight="5dp"
                         />
@@ -105,7 +105,6 @@
                         android:layout_weight="1"
                         android:adjustViewBounds="true"
                         tools:srcCompat="@drawable/glass_btn"
-                        android:background="#0000000"
                         android:scaleType="fitXY"
                         android:paddingRight="5dp"
                         />
@@ -117,7 +116,6 @@
                         android:layout_weight="1"
                         android:adjustViewBounds="true"
                         tools:srcCompat="@drawable/paper_btn"
-                        android:background="#0000000"
                         android:scaleType="fitXY"
                         />
 
@@ -130,56 +128,35 @@
                     android:orientation="horizontal"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:paddingTop="10dp"
-                    >
+                    android:layout_weight="1">
 
                     <ImageButton
                         android:id="@+id/btnPlastic"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="144dp"
                         android:layout_weight="1"
-                        tools:srcCompat="@drawable/plastic_btn"
-                        android:background="#0000000"
-                        android:scaleType="fitXY"
                         android:paddingRight="5dp"
-                        />
+                        android:scaleType="fitXY"
+                        tools:srcCompat="@drawable/plastic_btn" />
 
                     <ImageButton
                         android:id="@+id/btnVinyl"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="142dp"
                         android:layout_weight="1"
-                        tools:srcCompat="@drawable/vinyl_btn"
-                        android:background="#0000000"
+                        android:paddingRight="5dp"
                         android:scaleType="fitXY"
-                        android:paddingRight="5dp"/>
+                        tools:srcCompat="@drawable/vinyl_btn" />
 
                     <ImageButton
                         android:id="@+id/btnCan"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="139dp"
                         android:layout_weight="1"
-                        tools:srcCompat="@drawable/can_btn"
-                        android:background="#0000000"
-                        android:scaleType="fitXY"/>
+                        android:scaleType="fitXY"
+                        tools:srcCompat="@drawable/can_btn" />
 
                 </LinearLayout>
-
-            </LinearLayout>
-
-            <!-- my record to do challenge -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:layout_weight="1"
-                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
             </LinearLayout>
 

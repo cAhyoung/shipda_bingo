@@ -23,14 +23,16 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         loadFragment(homeFragment)
+
         btmNav = findViewById(R.id.btmNavView) as BottomNavigationView
+
         btmNav.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> {
                     loadFragment(homeFragment)
                     true
                 }
-                R.id.challenge -> {
+                R.id.bingo -> {
                     loadFragment(challengeFragment)
                     true
                 }
@@ -47,6 +49,8 @@ class HomeActivity : AppCompatActivity() {
 
 
     }
+
+    // fragment 불러오는 함수
 
     private fun loadFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()

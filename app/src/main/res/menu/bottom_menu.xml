@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/challenge"
+        android:id="@+id/bingo"
         android:enabled="true"
         android:icon="@drawable/bingo_btn"
         android:title="Bingo"
@@ -12,13 +12,14 @@
     <item
         android:id="@+id/home"
         android:enabled="true"
-        android:icon="@drawable/홈_white"
-        android:title="Home" />
+        android:icon="@drawable/home_btm_white"
+        android:title="Home"
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/mypage"
         android:enabled="true"
-        android:icon="@drawable/마이페이지_white"
+        android:icon="@drawable/mypage_btm_white"
         android:title="MyPage"
         app:showAsAction="ifRoom"/>
 
