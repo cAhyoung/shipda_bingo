@@ -1,10 +1,8 @@
-package com.example.happypig
+package com.example.happypig.login
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,8 +10,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import com.example.happypig.DBManager
+import com.example.happypig.R
 import java.util.regex.Pattern
 
 class FindIdActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.happypig
+package com.example.happypig.login
 
 import android.widget.Button
 

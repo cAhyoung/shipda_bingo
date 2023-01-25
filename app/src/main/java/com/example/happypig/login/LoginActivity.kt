@@ -1,4 +1,4 @@
-package com.example.happypig
+package com.example.happypig.login
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -6,11 +6,11 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.*
-import androidx.core.widget.addTextChangedListener
+import com.example.happypig.DBManager
+import com.example.happypig.R
+import com.example.happypig.home.HomeActivity2
 import java.util.*
-import java.util.regex.Pattern
 
 //로그인 페이지
 

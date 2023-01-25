@@ -34,7 +34,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".HomeActivity2"
+            android:name=".home.HomeActivity2"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -62,7 +62,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".FindPwActivity"
+            android:name=".login.FindPwActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -76,7 +76,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".FindIdActivity"
+            android:name=".login.FindIdActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -105,7 +105,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".login.LoginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

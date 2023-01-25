@@ -1,12 +1,10 @@
-package com.example.happypig
+package com.example.happypig.challenge
 
 import android.annotation.SuppressLint
-import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -18,6 +16,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.happypig.DBManager
+import com.example.happypig.R
+import com.example.happypig.home.HomeActivity2
 import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -27,10 +28,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [lv2BingoFragment.newInstance] factory method to
+ * Use the [lv3BingoFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class lv2BingoFragment : Fragment() {
+class lv3BingoFragment : Fragment() {
 
     lateinit var dbManager: DBManager
     lateinit var sqlitedb: SQLiteDatabase
@@ -62,8 +63,8 @@ class lv2BingoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view =  inflater.inflate(R.layout.fragment_lv2_bingo, container, false)
-
+        // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_lv3_bingo, container, false)
 
         dbManager = DBManager(context, "guruDB", null, 1)
 
@@ -109,19 +110,18 @@ class lv2BingoFragment : Fragment() {
         var bingo = view.findViewById<TextView>(R.id.bingo)
         var bingoNum: Int
 
-        var randChal = resources.getStringArray(R.array.level2)
+        var randChal = resources.getStringArray(R.array.level3)
 
-        var level = 2
+        var level = 3
         var userlevel = 0
-
 
         sqlitedb = dbManager.readableDatabase
         var cursor : Cursor
         cursor = sqlitedb.rawQuery("SELECT lv FROM personnel WHERE id = '" + id + "';",null)
         if (cursor.moveToNext()){
             userlevel = cursor.getInt(cursor.getColumnIndex("lv"))
-            //isFirst = cursor.getInt(cursor.getColumnIndex("isFirst"))
         }
+
 
         cursor.close()
         sqlitedb.close()
@@ -144,22 +144,21 @@ class lv2BingoFragment : Fragment() {
         }
 
         sqlitedb = dbManager.readableDatabase
-        cursor = sqlitedb.rawQuery("SELECT id FROM bingo2 WHERE id = '" + id + "';",null)
+        cursor = sqlitedb.rawQuery("SELECT id FROM bingo3 WHERE id = '" + id + "';",null)
         if(cursor.moveToNext()) isFirst = false
         cursor.close()
         sqlitedb.close()
 
+
         if (isFirst) {
             //프래그먼트 최초 실행
             //빙고 랜덤하게 배치
-
+            userlevel = 3
             val random = Random()
-
-            bingo.text = "0 빙고!"
 
             //DB
             sqlitedb = dbManager.writableDatabase
-            sqlitedb.execSQL("INSERT INTO bingo2 VALUES ('" + id + "', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);")
+            sqlitedb.execSQL("INSERT INTO bingo3 VALUES ('" + id + "', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);")
             sqlitedb.close()
 
 
@@ -175,9 +174,9 @@ class lv2BingoFragment : Fragment() {
                 list.add(randomnum)
                 tv[index].text = randChal[randomnum]
 
-                //db 업데이트
+                //db
                 sqlitedb = dbManager.writableDatabase
-                sqlitedb.execSQL("UPDATE bingo2 set " +row + " = " + randomnum + " where id = '" + id + "';")
+                sqlitedb.execSQL("UPDATE bingo3 set " +row + " = " + randomnum + " where id = '" + id + "';")
 
                 index++
 
@@ -192,13 +191,13 @@ class lv2BingoFragment : Fragment() {
                 var row : String = "tv" + i
                 var index : Int = 0
                 sqlitedb = dbManager.writableDatabase
-                cursor = sqlitedb.rawQuery("SELECT "+ row + " FROM bingo2 WHERE id = '" + id + "';", null)
+                cursor = sqlitedb.rawQuery("SELECT "+ row + " FROM bingo3 WHERE id = '" + id + "';", null)
                 if (cursor.moveToNext()) index = cursor.getInt(cursor.getColumnIndex(row))
                 tv[i].text = randChal[index].toString()
                 cursor.close()
 
                 row = "flag" + i
-                cursor = sqlitedb.rawQuery("SELECT "+ row + " FROM bingo2 WHERE id = '" + id + "';", null)
+                cursor = sqlitedb.rawQuery("SELECT "+ row + " FROM bingo3 WHERE id = '" + id + "';", null)
                 if (cursor.moveToNext()){
                     var flag = cursor.getInt(cursor.getColumnIndex(row))
                     if (flag == 0) checked[i] = false
@@ -245,7 +244,6 @@ class lv2BingoFragment : Fragment() {
 
         sqlitedb.close()
 
-
         //빙고 게임 진행
         for ( i  in 0 .. 8) {
             val index: Int = i
@@ -258,7 +256,7 @@ class lv2BingoFragment : Fragment() {
                 if (checked[index]) value = 1
                 else value = 0
                 sqlitedb = dbManager.writableDatabase
-                sqlitedb.execSQL("UPDATE bingo2 set " + row  + " = " + value + " where id = '" + id + "';")
+                sqlitedb.execSQL("UPDATE bingo3 set " + row  + " = " + value + " where id = '" + id + "';")
                 sqlitedb.close()
 
 
@@ -268,7 +266,7 @@ class lv2BingoFragment : Fragment() {
 
                 if (!levelupFlag){
                     userlevel = levelUp(bingoNum, level, view.context) //디비 업데이트하기
-                    if (userlevel == 3){
+                    if (userlevel == 4){
                         levelupFlag = true
                         next.isEnabled = true
 
@@ -309,10 +307,10 @@ class lv2BingoFragment : Fragment() {
         }
 
         back.setOnClickListener {
-            homeActivity.changeFragment(2)
+            homeActivity.changeFragment(3)
         }
         next.setOnClickListener {
-            homeActivity.changeFragment(4)
+            Toast.makeText(homeActivity, "Coming Soon!",Toast.LENGTH_SHORT).show()
         }
 
 
@@ -338,12 +336,12 @@ class lv2BingoFragment : Fragment() {
                 tv[index].text = randChal[randomnum]
 
                 sqlitedb = dbManager.writableDatabase
-                sqlitedb.execSQL("UPDATE bingo2 set " +row + " = " + randomnum + " where id = '" + id + "';")
+                sqlitedb.execSQL("UPDATE bingo3 set " +row + " = " + randomnum + " where id = '" + id + "';")
                 sqlitedb.close()
 
                 row = "flag" + index
                 sqlitedb = dbManager.writableDatabase
-                sqlitedb.execSQL("UPDATE bingo2 set " +row + " = 0 where id = '" + id + "';")
+                sqlitedb.execSQL("UPDATE bingo3 set " +row + " = 0 where id = '" + id + "';")
 
                 index++
 
@@ -368,7 +366,7 @@ class lv2BingoFragment : Fragment() {
             for (i in 0..8){
                 var row = "flag" + i
                 sqlitedb = dbManager.writableDatabase
-                sqlitedb.execSQL("UPDATE bingo2 set " +row + " = 0 where id = '" + id + "';")
+                sqlitedb.execSQL("UPDATE bingo3 set " +row + " = 0 where id = '" + id + "';")
             }
             //이미지 뷰
             iv1_c.visibility = View.INVISIBLE
@@ -389,19 +387,18 @@ class lv2BingoFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment lv2BingoFragment.
+         * @return A new instance of fragment lv3BingoFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            lv2BingoFragment().apply {
+            lv3BingoFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
                 }
             }
     }
-
 
     @SuppressLint("Range")
     private fun clicked(tv : TextView, iv : ImageView, flag : Array<Boolean>, num : Int) {
@@ -430,7 +427,7 @@ class lv2BingoFragment : Fragment() {
             dbManager = DBManager(context, "guruDB", null, 1)
             sqlitedb = dbManager.readableDatabase
             var cursor : Cursor
-            cursor = sqlitedb.rawQuery("SELECT " + row + " FROM bingo2 WHERE id = '" + id + "';", null)
+            cursor = sqlitedb.rawQuery("SELECT " + row + " FROM bingo3 WHERE id = '" + id + "';", null)
             if (cursor.moveToNext()){
                 val web = cursor.getInt(cursor.getColumnIndex(row))
                 when (web) {
@@ -444,6 +441,14 @@ class lv2BingoFragment : Fragment() {
                     }
                     2 -> {
                         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://thepicker.net/JOURNEYTOZERO/?idx=3162382&bmode=view"))
+                        startActivity(intent)
+                    }
+                    3 -> {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("http://www.greenfund.org/board/board.php?bo_table=campaign"))
+                        startActivity(intent)
+                    }
+                    4 -> {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://ppseoul.com/mill"))
                         startActivity(intent)
                     }
                 }
