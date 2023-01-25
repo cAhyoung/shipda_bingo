@@ -13,6 +13,14 @@
         android:theme="@style/Theme.HappyPig"
         tools:targetApi="31">
         <activity
+            android:name=".mypage.detailpage.AnnounceText"
+            android:exported="false"
+            android:parentActivityName=".mypage.Announce">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".mypage.Announce"
             android:exported="false">
             <meta-data
