@@ -15,6 +15,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.MimeTypeFilter.matches
 import androidx.core.widget.addTextChangedListener
 import org.w3c.dom.Text
+import java.util.Date
 import java.util.regex.Pattern
 import java.util.regex.Pattern.matches
 
@@ -504,12 +505,21 @@ class SignUpActivity : AppCompatActivity() {
 
             val lv = 0
 
+            //현재 시간
+            var day = Date()
+            var year = day.year
+            var month = day.month
+            var date = day.date
+
             sqlitedb = dbManager.writableDatabase
-            sqlitedb.execSQL("INSERT INTO personnel VALUES ('" + id + "', '" + pw + "', '" + nickname + "', '" + email + "', '" + lv + "');")
+            sqlitedb.execSQL("INSERT INTO personnel VALUES ('" + id + "', '" + pw + "', '" + nickname + "', '" + email + "', '" + lv + "', 0, " + year + ", " + month + ", " + date + ");")
             sqlitedb.close()
+
+            var dateChangeFlag = false
 
            //홈 화면으로 전환
             intent = Intent(this, HomeActivity2::class.java)
+            intent.putExtra("dateChange", dateChangeFlag)
             intent.putExtra("id", id)
             startActivity(intent)
 

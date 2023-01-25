@@ -113,18 +113,22 @@ class lv2BingoFragment : Fragment() {
 
         var level = 2
         var userlevel = 0
+
+
         sqlitedb = dbManager.readableDatabase
         var cursor : Cursor
         cursor = sqlitedb.rawQuery("SELECT lv FROM personnel WHERE id = '" + id + "';",null)
         if (cursor.moveToNext()){
             userlevel = cursor.getInt(cursor.getColumnIndex("lv"))
+            //isFirst = cursor.getInt(cursor.getColumnIndex("isFirst"))
         }
 
         cursor.close()
         sqlitedb.close()
 
-        var levelupFlag = false
 
+        var levelupFlag = false
+        var isFirst = true
         val homeActivity = activity as HomeActivity2
 
         if (userlevel > level) {
@@ -139,15 +143,23 @@ class lv2BingoFragment : Fragment() {
             checks[index] = view.findViewById(ivId[index])
         }
 
-        if (userlevel == 0) {
-            //앱 최초 실행
+        sqlitedb = dbManager.readableDatabase
+        cursor = sqlitedb.rawQuery("SELECT id FROM bingo2 WHERE id = '" + id + "';",null)
+        if(cursor.moveToNext()) isFirst = false
+        cursor.close()
+        sqlitedb.close()
+
+        if (isFirst) {
+            //프래그먼트 최초 실행
             //빙고 랜덤하게 배치
-            userlevel = 1
+
             val random = Random()
+
+            bingo.text = "0 빙고!"
 
             //DB
             sqlitedb = dbManager.writableDatabase
-            sqlitedb.execSQL("INSERT INTO bingo2 VALUES ('" + id + "', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );")
+            sqlitedb.execSQL("INSERT INTO bingo2 VALUES ('" + id + "', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);")
             sqlitedb.close()
 
 
@@ -163,7 +175,7 @@ class lv2BingoFragment : Fragment() {
                 list.add(randomnum)
                 tv[index].text = randChal[randomnum]
 
-                //db
+                //db 업데이트
                 sqlitedb = dbManager.writableDatabase
                 sqlitedb.execSQL("UPDATE bingo2 set " +row + " = " + randomnum + " where id = '" + id + "';")
 
@@ -351,7 +363,7 @@ class lv2BingoFragment : Fragment() {
         var reset = view.findViewById<Button>(R.id.btnReset)
         reset.setOnClickListener {
             reset(tv, checks, checked)
-            bingo.text = "0"
+            bingo.text = "0 빙고!"
 
             for (i in 0..8){
                 var row = "flag" + i

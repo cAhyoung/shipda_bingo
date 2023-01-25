@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.core.widget.addTextChangedListener
+import java.util.*
 import java.util.regex.Pattern
 
 //로그인 페이지
@@ -77,13 +78,52 @@ class LoginActivity : AppCompatActivity() {
                     if (cursor.moveToNext()) {
 
                         val dbPW = cursor.getString(cursor.getColumnIndex("pw")).toString()
+                        cursor.close()
+                        sqlitedb.close()
 
                         if (pass == dbPW) {
                             //Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
                             //홈 화면으로 액티비티 전환하기
                             //intent에 id 값 넣어서
+
+                            //지난 접속 기록 가져오기
+                            var dbYear : Int = 0
+                            var dbMonth : Int = 0
+                            var dbDate : Int = 0
+                            sqlitedb = dbManager.readableDatabase
+                            cursor = sqlitedb.rawQuery("SELECT year, month, date FROM personnel WHERE id = '" + user + "';",null)
+                            if(cursor.moveToNext()){
+
+                                dbYear = cursor.getInt(cursor.getColumnIndex("year"))
+                                dbMonth = cursor.getInt(cursor.getColumnIndex("month"))
+                                dbDate = cursor.getInt(cursor.getColumnIndex("date"))
+                            }
+                            cursor.close()
+                            sqlitedb.close()
+
+                            //앱에 접속한 시간 디비에 업데이트 하기
+                            var year = Date().year
+                            var month = Date().month
+                            var date = Date().date
+                            var dateChangeFlag = false
+
+                            sqlitedb = dbManager.writableDatabase
+                            sqlitedb.execSQL("UPDATE personnel SET year = " + year + ", month = " + month + ", date = " + date + " WHERE id = '" + user + "';")
+                            sqlitedb.close()
+
+                            if(date > dbDate){
+                                dateChangeFlag = true
+                            }
+                            else if (month > dbMonth) {
+                                dateChangeFlag = true
+                            }
+                            else if (year > dbYear) {
+                                dateChangeFlag = true
+                            }
+
                             intent = Intent(this, HomeActivity2::class.java)
-                            intent.putExtra("id",user)
+                            intent.putExtra("id", user)
+                            intent.putExtra("dateChange", dateChangeFlag)
                             startActivity(intent)
 
                         } else {
@@ -94,20 +134,18 @@ class LoginActivity : AppCompatActivity() {
 
                     } else {
                         cursor.close()
+                        sqlitedb.close()
                     }
-
-
-                    sqlitedb.close()
 
 
                 } else {
                     //존재하지 않는 회원
                     cursor.close()
-
+                    sqlitedb.close()
                     Toast.makeText(this, "회원이 아닙니다", Toast.LENGTH_SHORT).show()
                 }
 
-                sqlitedb.close()
+
 
 
             }
