@@ -4,23 +4,22 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-
-
+import com.example.happypig.home.HomeActivity
 
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var btnToLogin : Button
+    lateinit var btn : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
-        btnToLogin = findViewById(R.id.btnToLogin)
+        btn = findViewById(R.id.btnToLogin)
 
-        btnToLogin.setOnClickListener {
-            intent = Intent(this, LoginActivity::class.java)
+        btn.setOnClickListener {
+            intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
     }

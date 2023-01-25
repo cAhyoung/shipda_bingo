@@ -11,7 +11,6 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import com.example.happypig.R
-import com.example.happypig.databinding.DialogBinding
 import com.example.happypig.databinding.FragmentHomeBinding
 
 
