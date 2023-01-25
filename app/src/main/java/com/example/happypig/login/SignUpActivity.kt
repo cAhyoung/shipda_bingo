@@ -1,23 +1,20 @@
-package com.example.happypig
+package com.example.happypig.login
 
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Patterns
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.MimeTypeFilter.matches
 import androidx.core.widget.addTextChangedListener
-import org.w3c.dom.Text
+import com.example.happypig.DBManager
+import com.example.happypig.R
+import com.example.happypig.home.HomeActivity
+import com.example.happypig.home.HomeActivity2
 import java.util.Date
 import java.util.regex.Pattern
-import java.util.regex.Pattern.matches
 
 //회원가입 페이지
 class SignUpActivity : AppCompatActivity() {
@@ -518,7 +515,7 @@ class SignUpActivity : AppCompatActivity() {
             var dateChangeFlag = false
 
            //홈 화면으로 전환
-            intent = Intent(this, HomeActivity2::class.java)
+            intent = Intent(this, HomeActivity::class.java)
             intent.putExtra("dateChange", dateChangeFlag)
             intent.putExtra("id", id)
             startActivity(intent)

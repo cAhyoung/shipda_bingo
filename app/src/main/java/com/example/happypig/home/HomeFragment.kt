@@ -14,10 +14,9 @@ import com.example.happypig.R
 import com.example.happypig.databinding.FragmentHomeBinding
 
 
-
-
-
 class HomeFragment : Fragment() {
+
+    private var id: String? = null
 
     private lateinit var binding: FragmentHomeBinding
 
@@ -28,12 +27,21 @@ class HomeFragment : Fragment() {
     lateinit var btnVinyl: ImageButton
     lateinit var btnCan: ImageButton
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            id = it.getString("id")
+        }
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
-        val mActivity = activity as HomeActivity
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        val homeActivity = activity as HomeActivity  //mainActivity에서 homeActivity로 변수명 수정
 
         binding = FragmentHomeBinding.inflate(layoutInflater)
 
@@ -78,7 +86,9 @@ class HomeFragment : Fragment() {
 //        }
 
 
-        return inflater.inflate(R.layout.fragment_home, container, false)
+
+
+        return view
 
     }
 

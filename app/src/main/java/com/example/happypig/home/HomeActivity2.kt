@@ -1,4 +1,5 @@
-package com.example.happypig
+
+package com.example.happypig.home
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -11,8 +12,6 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.FrameLayout
@@ -23,6 +22,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.example.happypig.*
+import com.example.happypig.challenge.lv1BingoFragment
+import com.example.happypig.challenge.lv2BingoFragment
+import com.example.happypig.challenge.lv3BingoFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
 
@@ -85,9 +88,6 @@ class HomeActivity2 : AppCompatActivity(), SensorEventListener {
         var lv = 0
 
         dbManager = DBManager(this, "guruDB", null, 1)
-
-
-
 
         fragmentManager = supportFragmentManager
         home = HomeFragment2()
@@ -336,3 +336,4 @@ class HomeActivity2 : AppCompatActivity(), SensorEventListener {
 
 
 }
+

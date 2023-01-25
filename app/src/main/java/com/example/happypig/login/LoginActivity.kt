@@ -1,4 +1,4 @@
-package com.example.happypig
+package com.example.happypig.login
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -6,11 +6,12 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.*
-import androidx.core.widget.addTextChangedListener
+import com.example.happypig.DBManager
+import com.example.happypig.R
+import com.example.happypig.home.HomeActivity
+import com.example.happypig.home.HomeActivity2
 import java.util.*
-import java.util.regex.Pattern
 
 //로그인 페이지
 
@@ -121,7 +122,7 @@ class LoginActivity : AppCompatActivity() {
                                 dateChangeFlag = true
                             }
 
-                            intent = Intent(this, HomeActivity2::class.java)
+                            intent = Intent(this, HomeActivity::class.java)
                             intent.putExtra("id", user)
                             intent.putExtra("dateChange", dateChangeFlag)
                             startActivity(intent)

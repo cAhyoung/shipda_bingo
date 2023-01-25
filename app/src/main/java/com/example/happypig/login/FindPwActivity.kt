@@ -1,4 +1,4 @@
-package com.example.happypig
+package com.example.happypig.login
 
 import android.annotation.SuppressLint
 import android.database.Cursor
@@ -12,6 +12,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import com.example.happypig.DBManager
+import com.example.happypig.R
 import java.util.regex.Pattern
 
 class FindPwActivity : AppCompatActivity() {
