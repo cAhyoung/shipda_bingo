@@ -20,8 +20,16 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        
         <activity
             android:name=".mypage.Announce"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".HomeActivity2"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -35,7 +43,21 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".HomeActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".mypage.ChangeNick"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".FindPwActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -49,8 +71,23 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".FindIdActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".mypage.MemberInfo"
             android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+            
+        <activity>
+            android:name=".SignUpActivity"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -58,6 +95,13 @@
         <activity
             android:name=".home.HomeActivity"
             android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
