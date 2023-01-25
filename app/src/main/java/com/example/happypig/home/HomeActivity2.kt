@@ -1,3 +1,4 @@
+
 package com.example.happypig.home
 
 import android.annotation.SuppressLint
@@ -87,9 +88,6 @@ class HomeActivity2 : AppCompatActivity(), SensorEventListener {
         var lv = 0
 
         dbManager = DBManager(this, "guruDB", null, 1)
-
-
-
 
         fragmentManager = supportFragmentManager
         home = HomeFragment2()
@@ -338,3 +336,4 @@ class HomeActivity2 : AppCompatActivity(), SensorEventListener {
 
 
 }
+

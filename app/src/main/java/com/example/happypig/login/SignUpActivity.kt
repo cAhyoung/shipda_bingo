@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.widget.addTextChangedListener
 import com.example.happypig.DBManager
 import com.example.happypig.R
+import com.example.happypig.home.HomeActivity
 import com.example.happypig.home.HomeActivity2
 import java.util.Date
 import java.util.regex.Pattern
@@ -514,7 +515,7 @@ class SignUpActivity : AppCompatActivity() {
             var dateChangeFlag = false
 
            //홈 화면으로 전환
-            intent = Intent(this, HomeActivity2::class.java)
+            intent = Intent(this, HomeActivity::class.java)
             intent.putExtra("dateChange", dateChangeFlag)
             intent.putExtra("id", id)
             startActivity(intent)

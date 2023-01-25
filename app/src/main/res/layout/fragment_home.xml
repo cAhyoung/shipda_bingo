@@ -20,6 +20,7 @@
             android:orientation="vertical">
 
             <!-- manbo -->
+            <!--
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -30,6 +31,7 @@
 
 
             </LinearLayout>
+            -->
 
             <!-- ad banner -->
             <LinearLayout

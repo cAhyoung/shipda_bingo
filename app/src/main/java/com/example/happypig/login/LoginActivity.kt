@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.widget.*
 import com.example.happypig.DBManager
 import com.example.happypig.R
+import com.example.happypig.home.HomeActivity
 import com.example.happypig.home.HomeActivity2
 import java.util.*
 
@@ -121,7 +122,7 @@ class LoginActivity : AppCompatActivity() {
                                 dateChangeFlag = true
                             }
 
-                            intent = Intent(this, HomeActivity2::class.java)
+                            intent = Intent(this, HomeActivity::class.java)
                             intent.putExtra("id", user)
                             intent.putExtra("dateChange", dateChangeFlag)
                             startActivity(intent)

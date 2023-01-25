@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".home.HomeActivity2">
 
+
     <LinearLayout
         android:id="@+id/layoutForManbogi"
         android:layout_width="match_parent"
@@ -99,7 +100,6 @@
                 tools:context=".MainActivity" />
 
 
-
         </FrameLayout>
 
     </LinearLayout>
@@ -109,5 +109,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:menu="@menu/bottommenu2"/>
+
 
 </LinearLayout>

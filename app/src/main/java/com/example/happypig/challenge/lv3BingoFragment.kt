@@ -18,6 +18,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.happypig.DBManager
 import com.example.happypig.R
+import com.example.happypig.home.HomeActivity
 import com.example.happypig.home.HomeActivity2
 import java.util.*
 
@@ -129,7 +130,7 @@ class lv3BingoFragment : Fragment() {
 
         var levelupFlag = false
         var isFirst = true
-        val homeActivity = activity as HomeActivity2
+        val homeActivity = activity as HomeActivity
 
         if (userlevel > level) {
             levelupFlag = true

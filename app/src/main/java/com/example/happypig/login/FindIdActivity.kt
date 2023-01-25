@@ -101,6 +101,7 @@ class FindIdActivity : AppCompatActivity() {
                     tvFindId_Id.text = id
 
                     layoutFindId_layout.visibility = View.VISIBLE
+                    tvFindId_warningEmail.visibility = View.INVISIBLE
 
                     
                 }
