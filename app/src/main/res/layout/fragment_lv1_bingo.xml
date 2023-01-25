@@ -7,7 +7,7 @@
     android:background="@drawable/bingo_back"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".lv1BingoFragment">
+    tools:context=".challenge.lv1BingoFragment">
 
     <TextView
         android:layout_width="wrap_content"

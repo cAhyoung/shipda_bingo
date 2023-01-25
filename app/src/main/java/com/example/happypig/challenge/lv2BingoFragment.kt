@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
@@ -43,8 +44,8 @@ class lv2BingoFragment : Fragment() {
     lateinit var iv3_c: ImageView
     lateinit var iv3_b: ImageView
 
-    lateinit var back : Button
-    lateinit var next : Button
+    lateinit var back : ImageButton
+    lateinit var next : ImageButton
 
     // TODO: Rename and change types of parameters
     private var id: String? = null
@@ -318,10 +319,10 @@ class lv2BingoFragment : Fragment() {
 
 
         //재배치 button
-        var randomize = view.findViewById<Button>(R.id.btnRandmoize)
+        var randomize = view.findViewById<ImageButton>(R.id.btnRandmoize)
         randomize.setOnClickListener {
             reset(tv, checks, checked)
-            bingo.text = "0"
+            bingo.text = "0 빙고!"
 
 
             //랜덤하게 재배치
