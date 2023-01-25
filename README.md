@@ -8,7 +8,7 @@
   - 개발: 강명서, 조아영  
   
 - 개발환경
-  - minimum SDK : 19
+  - minimum SDK : 23
   - android studio dolphin 21.3.1
   
 - 개발 언어
