@@ -103,34 +103,6 @@ class FindIdActivity : AppCompatActivity() {
 
                     layoutFindId_layout.visibility = View.VISIBLE
 
-                    //디비에 존재하는 이메일
-                    //이메일로 인증 번호 전송
-                    /*
-                    val emailAddress = inputEmail
-                    val title = "[빙고 챌린지] 아이디 찾기 인증번호입니다"
-
-                    val randNum = (1000..9999).random()
-                    val content = "아이디 찾기 인증번호는 $randNum 입니다."
-
-                    val intent = Intent(Intent.ACTION_SENDTO)
-                        .apply {
-                            type = "text/plain"
-                            data = Uri.parse("mailto:")
-
-                            putExtra(Intent.EXTRA_EMAIL, arrayOf(emailAddress))
-                            putExtra(Intent.EXTRA_SUBJECT, title)
-                            putExtra(Intent.EXTRA_TEXT, content)
-                        }
-
-                    if (intent.resolveActivity(packageManager) != null) {
-                        startActivity(Intent.createChooser(intent, "메일 전송하기"))
-                        Toast.makeText(this, "메일이 전송되었습니다.", Toast.LENGTH_SHORT).show()
-                    }
-                    else {
-                        Toast.makeText(this, "메일을 전송할 수 없습니다.", Toast.LENGTH_SHORT).show()
-                    }
-
-                     */
                     
                 }
                 else {
