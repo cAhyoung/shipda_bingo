@@ -7,26 +7,13 @@
     android:orientation="vertical"
     android:visibility="visible">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
             <!-- manbo -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="horizontal">
-
-
 
 
             </LinearLayout>
@@ -34,14 +21,19 @@
             <!-- ad banner -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="horizontal">
-
+            <!--
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/adView"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent" />  -->
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ad_banner1"/>
 
 
             </LinearLayout>
@@ -59,8 +51,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:layout_weight="1">
+                    android:paddingRight="10dp">
 
                     <ImageButton
                         android:id="@+id/btnTrash"
@@ -68,10 +59,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/trash_btn"
-                        android:scaleType="fitXY"
                         android:paddingRight="5dp"
-                        />
+                        android:scaleType="fitXY"
+                        android:src="@drawable/trash_btn"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
                         android:id="@+id/btnGlass"
@@ -79,10 +70,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/glass_btn"
-                        android:scaleType="fitXY"
                         android:paddingRight="5dp"
-                        />
+                        android:scaleType="fitXY"
+                        android:src="@drawable/glass_btn"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
                         android:id="@+id/btnPaper"
@@ -90,9 +81,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/paper_btn"
                         android:scaleType="fitXY"
-                        />
+                        android:src="@drawable/paper_btn"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
                 </LinearLayout>
 
@@ -102,8 +93,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:layout_weight="1">
+                    android:paddingRight="10dp">
 
                     <ImageButton
                         android:id="@+id/btnPlastic"
@@ -112,7 +102,8 @@
                         android:layout_weight="1"
                         android:paddingRight="5dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/plastic_btn" />
+                        android:src="@drawable/plastic_btn"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
                         android:id="@+id/btnVinyl"
@@ -121,7 +112,8 @@
                         android:layout_weight="1"
                         android:paddingRight="5dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/vinyl_btn" />
+                        android:src="@drawable/vinyl_btn"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
                         android:id="@+id/btnCan"
@@ -129,16 +121,12 @@
                         android:layout_height="139dp"
                         android:layout_weight="1"
                         android:scaleType="fitXY"
-                        android:src="@drawable/can_btn" />
+                        android:src="@drawable/can_btn"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
-
-        </LinearLayout>
-
-
-    </ScrollView>
 
 </LinearLayout>

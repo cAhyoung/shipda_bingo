@@ -1,21 +1,14 @@
 package com.example.happypig.home
 
 import android.app.AlertDialog
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.core.view.isInvisible
-import com.example.happypig.MainActivity
 import com.example.happypig.R
 import com.example.happypig.databinding.FragmentHomeBinding
-import java.util.*
-
 
 
 class HomeFragment : Fragment() {
@@ -34,8 +27,12 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
-        val mActivity = activity as HomeActivity
+
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        val hActivity = activity as HomeActivity
+
+
 
         // 랜덤으로 문구 가져오는 코드
         // 만보기로 대체
@@ -46,83 +43,79 @@ class HomeFragment : Fragment() {
 
         // 버튼 클릭 시 분리수거 방법
 
-        btnTrash = binding.btnTrash
-        btnGlass = binding.btnGlass
-        btnPaper = binding.btnPaper
-        btnPlastic = binding.btnPlastic
-        btnVinyl = binding.btnVinyl
-        btnCan = binding.btnCan
+        btnTrash = view.findViewById(R.id.btnTrash)
+        btnGlass = view.findViewById(R.id.btnGlass)
+        btnPaper = view.findViewById(R.id.btnPaper)
+        btnPlastic = view.findViewById(R.id.btnPlastic)
+        btnVinyl = view.findViewById(R.id.btnVinyl)
+        btnCan = view.findViewById(R.id.btnCan)
 
         btnTrash.setOnClickListener {
-            showDialog(mActivity, 1)
+            var dialogView = View.inflate(hActivity, R.layout.dialog_trash, null)
+            var dlg = AlertDialog.Builder(hActivity)
+            dlg.setTitle("일반쓰레기 배출 방법")
+            dlg.setView(dialogView)
+            dlg.setCancelable(true)
+            dlg.setPositiveButton("확인", null)
+            dlg.show()
         }
 
         btnGlass.setOnClickListener {
-            showDialog(mActivity, 2)
+            var dialogView = View.inflate(hActivity, R.layout.dialog_glass, null)
+            var dlg = AlertDialog.Builder(hActivity)
+            dlg.setTitle("유리 배출 방법")
+            dlg.setView(dialogView)
+            dlg.setCancelable(true)
+            dlg.setPositiveButton("확인", null)
+            dlg.show()
+
         }
 
         btnPaper.setOnClickListener {
-            showDialog(mActivity, 3)
+            var dialogView = View.inflate(hActivity, R.layout.dialog_paper, null)
+            var dlg = AlertDialog.Builder(hActivity)
+            dlg.setTitle("종이 배출 방법")
+            dlg.setView(dialogView)
+            dlg.setCancelable(true)
+            dlg.setPositiveButton("확인", null)
+            dlg.show()
+
         }
 
         btnPlastic.setOnClickListener {
-            showDialog(mActivity, 4)
+            var dialogView = View.inflate(hActivity, R.layout.dialog_plastic, null)
+            var dlg = AlertDialog.Builder(hActivity)
+            dlg.setTitle("플라스틱 배출 방법")
+            dlg.setView(dialogView)
+            dlg.setCancelable(true)
+            dlg.setPositiveButton("확인", null)
+            dlg.show()
         }
 
         btnVinyl.setOnClickListener {
-            showDialog(mActivity, 5)
+            var dialogView = View.inflate(hActivity, R.layout.dialog_vinyl, null)
+            var dlg = AlertDialog.Builder(hActivity)
+            dlg.setTitle("비닐 배출 방법")
+            dlg.setView(dialogView)
+            dlg.setCancelable(true)
+            dlg.setPositiveButton("확인", null)
+            dlg.show()
         }
 
         btnCan.setOnClickListener {
-            showDialog(mActivity, 6)
+            var dialogView = View.inflate(hActivity, R.layout.dialog_can, null)
+            var dlg = AlertDialog.Builder(hActivity)
+            dlg.setTitle("캔 배출 방법")
+            dlg.setView(dialogView)
+            dlg.setCancelable(true)
+            dlg.setPositiveButton("확인", null)
+            dlg.show()
         }
 
 
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return view
     }
-
-
-
-    private fun showDialog(context: Context, btn: Int) {
-
-        var dialogView = View.inflate(context, R.layout.dialog, null)
-
-        val trash = dialogView.findViewById<ImageView>(R.id.trash)
-        val glass = dialogView.findViewById<ImageView>(R.id.glass)
-        val paper = dialogView.findViewById<ImageView>(R.id.paper)
-        val plastic = dialogView.findViewById<ImageView>(R.id.plastic)
-        val vinyl = dialogView.findViewById<ImageView>(R.id.vinyl)
-        val can = dialogView.findViewById<ImageView>(R.id.can)
-
-        var dialog = AlertDialog.Builder(context)
-
-        dialog.setView(dialogView)
-        dialog.setPositiveButton("확인", null)
-
-        if (btn == 1) {
-            trash.visibility = View.VISIBLE
-        }
-        else if (btn == 2) {
-            glass.visibility = View.VISIBLE
-        }
-        else if (btn == 3) {
-            paper.visibility = View.VISIBLE
-        }
-        else if (btn == 4) {
-            plastic.visibility = View.VISIBLE
-        }
-        else if (btn == 5) {
-            vinyl.visibility = View.VISIBLE
-        }
-        else {
-            can.visibility = View.VISIBLE
-        }
-
-    }
-
 
 
 }
-
-
 
