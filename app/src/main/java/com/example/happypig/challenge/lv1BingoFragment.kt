@@ -45,8 +45,8 @@ class lv1BingoFragment : Fragment() {
     lateinit var iv3_c: ImageView
     lateinit var iv3_b: ImageView
 
-    lateinit var back : ImageButton
-    lateinit var next : ImageButton
+    lateinit var back : Button
+    lateinit var next : Button
 
 
 
@@ -318,7 +318,7 @@ class lv1BingoFragment : Fragment() {
         }
 
         //재배치 button
-        var randomize = view.findViewById<ImageButton>(R.id.btnRandmoize)
+        var randomize = view.findViewById<Button>(R.id.btnRandmoize)
         randomize.setOnClickListener {
             reset(tv, checks, checked)
             bingo.text = "0 빙고!"
