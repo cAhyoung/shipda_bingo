@@ -111,19 +111,22 @@ class lv3BingoFragment : Fragment() {
 
         var level = 3
         var userlevel = 0
+
         sqlitedb = dbManager.readableDatabase
         var cursor : Cursor
         cursor = sqlitedb.rawQuery("SELECT lv FROM personnel WHERE id = '" + id + "';",null)
         if (cursor.moveToNext()){
             userlevel = cursor.getInt(cursor.getColumnIndex("lv"))
         }
-        val homeActivity = activity as HomeActivity2
+
 
         cursor.close()
         sqlitedb.close()
 
-        var levelupFlag = false
 
+        var levelupFlag = false
+        var isFirst = true
+        val homeActivity = activity as HomeActivity2
 
         if (userlevel > level) {
             levelupFlag = true
@@ -137,16 +140,22 @@ class lv3BingoFragment : Fragment() {
             checks[index] = view.findViewById(ivId[index])
         }
 
+        sqlitedb = dbManager.readableDatabase
+        cursor = sqlitedb.rawQuery("SELECT id FROM bingo3 WHERE id = '" + id + "';",null)
+        if(cursor.moveToNext()) isFirst = false
+        cursor.close()
+        sqlitedb.close()
 
-        if (userlevel == 0) {
-            //앱 최초 실행
+
+        if (isFirst) {
+            //프래그먼트 최초 실행
             //빙고 랜덤하게 배치
-            userlevel = 1
+            userlevel = 3
             val random = Random()
 
             //DB
             sqlitedb = dbManager.writableDatabase
-            sqlitedb.execSQL("INSERT INTO bingo3 VALUES ('" + id + "', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 );")
+            sqlitedb.execSQL("INSERT INTO bingo3 VALUES ('" + id + "', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);")
             sqlitedb.close()
 
 
@@ -349,7 +358,7 @@ class lv3BingoFragment : Fragment() {
         var reset = view.findViewById<Button>(R.id.btnReset)
         reset.setOnClickListener {
             reset(tv, checks, checked)
-            bingo.text = "0"
+            bingo.text = "0 빙고!"
 
             for (i in 0..8){
                 var row = "flag" + i
