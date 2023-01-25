@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.widget.Toolbar
 import com.example.happypig.R
+import com.example.happypig.home.HomeActivity
 import com.example.happypig.mypage.detailpage.AnnounceText
 
 class Announce : AppCompatActivity() {
@@ -14,14 +15,9 @@ class Announce : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_announce)
 
-        // 뒤로가기 (announce activity에서 mypage fragment로 전환)
+        // announce용 toolbar
         val toolbarAnnounce = findViewById<Toolbar>(R.id.toolbarAnnounce)
         setSupportActionBar(toolbarAnnounce)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        toolbarAnnounce.setOnClickListener {
-
-        }
 
         // 공지사항 버튼 클릭 시 activity 전환
         val announce1 = findViewById<Button>(R.id.announce1)
