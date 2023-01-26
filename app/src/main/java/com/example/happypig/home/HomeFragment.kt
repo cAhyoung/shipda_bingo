@@ -39,21 +39,12 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
+
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val homeActivity = activity as HomeActivity  //mainActivity에서 homeActivity로 변수명 수정
+        val hActivity = activity as HomeActivity
 
-        btnTrash = view.findViewById(R.id.btnTrash)
-        var dialogView = View.inflate(homeActivity, R.layout.dlgimg, null)
-        btnTrash.setOnClickListener {
-            var dlg = androidx.appcompat.app.AlertDialog.Builder(homeActivity)
-            dlg.setTitle("title")
-            dlg.setView(dialogView)
-            dlg.setPositiveButton("cancel",null)
-            dlg.show()
-        }
 
-        //binding = FragmentHomeBinding.inflate(layoutInflater)
 
         // 랜덤으로 문구 가져오는 코드
         // 만보기로 대체
@@ -64,52 +55,84 @@ class HomeFragment : Fragment() {
 
         // 버튼 클릭 시 분리수거 방법
 
-//        btnTrash = binding.btnTrash
-//        btnGlass = binding.btnGlass
-//        btnPaper = binding.btnPaper
-//        btnPlastic = binding.btnPlastic
-//        btnVinyl = binding.btnVinyl
-//        btnCan = binding.btnCan
-//
-//        btnTrash.setOnClickListener {
-//            showDialog(this, 1)
-//        }
-//
-//        btnGlass.setOnClickListener {
-//            showDialog(this, 2)
-//        }
-//
-//        btnPaper.setOnClickListener {
-//            showDialog(this, 3)
-//        }
-//
-//        btnPlastic.setOnClickListener {
-//            showDialog(this, 4)
-//        }
-//
-//        btnVinyl.setOnClickListener {
-//            showDialog(this, 5)
-//        }
-//
-//        btnCan.setOnClickListener {
-//            showDialog(this, 6)
-//        }
+        btnTrash = view.findViewById(R.id.btnTrash)
+        btnGlass = view.findViewById(R.id.btnGlass)
+        btnPaper = view.findViewById(R.id.btnPaper)
+        btnPlastic = view.findViewById(R.id.btnPlastic)
+        btnVinyl = view.findViewById(R.id.btnVinyl)
+        btnCan = view.findViewById(R.id.btnCan)
 
 
+        btnTrash = view.findViewById(R.id.btnTrash)
+        var dialogView = View.inflate(homeActivity, R.layout.dlgimg, null)
+        btnTrash.setOnClickListener {
+            var dialogView = View.inflate(hActivity, R.layout.dialog_trash, null)
+            var dlg = AlertDialog.Builder(hActivity)
+            dlg.setTitle("일반쓰레기 배출 방법")
+            dlg.setView(dialogView)
+            dlg.setCancelable(true)
+            dlg.setPositiveButton("확인", null)
+            dlg.show()
+        }
+
+        btnGlass.setOnClickListener {
+            var dialogView = View.inflate(hActivity, R.layout.dialog_glass, null)
+            var dlg = AlertDialog.Builder(hActivity)
+            dlg.setTitle("유리 배출 방법")
+            dlg.setView(dialogView)
+            dlg.setCancelable(true)
+            dlg.setPositiveButton("확인", null)
+            dlg.show()
+
+        }
+
+        btnPaper.setOnClickListener {
+            var dialogView = View.inflate(hActivity, R.layout.dialog_paper, null)
+            var dlg = AlertDialog.Builder(hActivity)
+            dlg.setTitle("종이 배출 방법")
+            dlg.setView(dialogView)
+            dlg.setCancelable(true)
+            dlg.setPositiveButton("확인", null)
+            dlg.show()
+
+        }
+
+        btnPlastic.setOnClickListener {
+            var dialogView = View.inflate(hActivity, R.layout.dialog_plastic, null)
+            var dlg = AlertDialog.Builder(hActivity)
+            dlg.setTitle("플라스틱 배출 방법")
+            dlg.setView(dialogView)
+            dlg.setCancelable(true)
+            dlg.setPositiveButton("확인", null)
+            dlg.show()
+        }
+
+        btnVinyl.setOnClickListener {
+            var dialogView = View.inflate(hActivity, R.layout.dialog_vinyl, null)
+            var dlg = AlertDialog.Builder(hActivity)
+            dlg.setTitle("비닐 배출 방법")
+            dlg.setView(dialogView)
+            dlg.setCancelable(true)
+            dlg.setPositiveButton("확인", null)
+            dlg.show()
+        }
+
+        btnCan.setOnClickListener {
+            var dialogView = View.inflate(hActivity, R.layout.dialog_can, null)
+            var dlg = AlertDialog.Builder(hActivity)
+            dlg.setTitle("캔 배출 방법")
+            dlg.setView(dialogView)
+            dlg.setCancelable(true)
+            dlg.setPositiveButton("확인", null)
+            dlg.show()
+        }
 
 
         return view
-
     }
 
 
-
-
-
-
-}
-
-
+ }
 
 
 
