@@ -2,11 +2,15 @@ package com.example.happypig.home
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.viewpager2.widget.ViewPager2
 import com.example.happypig.R
 import com.example.happypig.databinding.FragmentHomeBinding
 
@@ -21,6 +25,13 @@ class HomeFragment : Fragment() {
     lateinit var btnPlastic : ImageButton
     lateinit var btnVinyl : ImageButton
     lateinit var btnCan : ImageButton
+
+    lateinit var viewPagerAd : ViewPager2
+    var currentPosition = 0
+    val handler = Handler(Looper.getMainLooper()) {
+        setPage()
+        true
+    }
 
 
     override fun onCreateView(
@@ -38,7 +49,14 @@ class HomeFragment : Fragment() {
         // 만보기로 대체
 
 
-        // 배너광고 -> 잠깐 좀 미룰게요
+        // 배너광고
+        // 다른 fragment를 갔다가 home으로 돌아오는 경우 슬라이드 배너가 좀더 빠르게 혹은 랜덤으로 넘어가버림
+        viewPagerAd = view.findViewById(R.id.adView)
+        viewPagerAd.adapter = ViewpagerAdapter(getAdBanners())
+        viewPagerAd.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        var thread = Thread(PagerRunnable())
+        thread.start()
+
 
 
         // 버튼 클릭 시 분리수거 방법
@@ -115,6 +133,33 @@ class HomeFragment : Fragment() {
 
         return view
     }
+
+    private fun getAdBanners() : ArrayList<Int> {
+        return arrayListOf<Int> (
+            R.drawable.ad_banner1,
+            R.drawable.ad_banner2
+                )
+    }
+
+    fun setPage() {
+        if(currentPosition == 2) currentPosition = 0
+        viewPagerAd.setCurrentItem(currentPosition, true)
+        currentPosition += 1
+    }
+
+    inner class PagerRunnable : Runnable {
+        override fun run() {
+            while (true) {
+                try {
+                    Thread.sleep(2000)
+                    handler.sendEmptyMessage(0)
+                } catch (e: InterruptedException) {
+                    Log.d("interupt", "interupt발생")
+                }
+            }
+        }
+    }
+
 
 
 }
