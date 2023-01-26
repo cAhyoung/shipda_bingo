@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
@@ -320,7 +321,7 @@ class lv1BingoFragment : Fragment() {
         var randomize = view.findViewById<Button>(R.id.btnRandmoize)
         randomize.setOnClickListener {
             reset(tv, checks, checked)
-            bingo.text = "0"
+            bingo.text = "0 빙고!"
 
 
             //랜덤하게 재배치

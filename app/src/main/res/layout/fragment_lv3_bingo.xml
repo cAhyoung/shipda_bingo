@@ -7,7 +7,7 @@
     android:background="@drawable/bingo_back"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".lv1BingoFragment">
+    tools:context=".challenge.lv1BingoFragment">
 
     <TextView
         android:layout_width="wrap_content"
@@ -62,10 +62,10 @@
             android:layout_width="50dp"
             android:layout_height="63dp"
             android:layout_marginLeft="5dp"
-            android:background="@drawable/btn_back"
-            android:enabled="false"
-            app:backgroundTint="#FFFFFF" />
+            android:enabled="true"/>
 
+        <!--android:background="@drawable/btn_back"
+        app:backgroundTint="#FFFFFF"-->
         <TableLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -250,9 +250,10 @@
             android:layout_width="50dp"
             android:layout_height="63dp"
             android:layout_marginRight="5dp"
-            android:background="@drawable/btn_next"
             android:enabled="false"
-            app:backgroundTint="#FFFFFF" />
+            />
+        <!--android:background="@drawable/btn_next"
+            app:backgroundTint="#FFFFFF" -->
     </LinearLayout>
 
 
@@ -356,21 +357,21 @@
         android:layout_height="wrap_content"
         android:gravity="center">
 
-        <ImageButton
+        <Button
             android:id="@+id/btnRandmoize"
             android:layout_width="90dp"
             android:layout_height="45dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/btn_replace"
             android:text="재배치"
-            android:textStyle="bold" />
+        android:textStyle="bold" />
+        <!--android:background="@drawable/btn_replace"-->
 
-        <ImageButton
+        <Button
             android:id="@+id/btnReset"
             android:layout_width="90dp"
             android:layout_height="45dp"
-            android:background="@drawable/btn_reset"
             android:text="리셋"
             android:textStyle="bold" />
+        <!--android:background="@drawable/btn_reset"-->
     </LinearLayout>
 </LinearLayout>

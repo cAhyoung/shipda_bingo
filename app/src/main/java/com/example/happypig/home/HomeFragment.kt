@@ -43,7 +43,17 @@ class HomeFragment : Fragment() {
 
         val homeActivity = activity as HomeActivity  //mainActivity에서 homeActivity로 변수명 수정
 
-        binding = FragmentHomeBinding.inflate(layoutInflater)
+        btnTrash = view.findViewById(R.id.btnTrash)
+        var dialogView = View.inflate(homeActivity, R.layout.dlgimg, null)
+        btnTrash.setOnClickListener {
+            var dlg = androidx.appcompat.app.AlertDialog.Builder(homeActivity)
+            dlg.setTitle("title")
+            dlg.setView(dialogView)
+            dlg.setPositiveButton("cancel",null)
+            dlg.show()
+        }
+
+        //binding = FragmentHomeBinding.inflate(layoutInflater)
 
         // 랜덤으로 문구 가져오는 코드
         // 만보기로 대체
