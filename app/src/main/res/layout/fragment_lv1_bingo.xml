@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bingo_back"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".challenge.lv1BingoFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="쉽게만 살아가면 다 잃어요 빙고!"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="level 1"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="63dp"
+            android:layout_marginLeft="5dp"
+
+            android:enabled="false"
+             />
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TableRow>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check1"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_baseline_check_24"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv1" />
+                </FrameLayout>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check2"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_baseline_check_24"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv2" />
+                </FrameLayout>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check3"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_baseline_check_24"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv3"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv3" />
+                </FrameLayout>
+
+            </TableRow>
+
+            <TableRow>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check4"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_baseline_check_24"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv4"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv4" />
+                </FrameLayout>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check5"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_baseline_check_24"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv5"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv5" />
+                </FrameLayout>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check6"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_baseline_check_24"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv6"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv6" />
+                </FrameLayout>
+            </TableRow>
+
+            <TableRow>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check7"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_baseline_check_24"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv7"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv7" />
+                </FrameLayout>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check8"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_baseline_check_24"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv8"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv8" />
+                </FrameLayout>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check9"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_baseline_check_24"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv9"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv9" />
+                </FrameLayout>
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="50dp"
+            android:layout_height="63dp"
+            android:layout_marginRight="5dp"
+
+            android:enabled="false"
+            />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/bingo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="빙고 개수"
+        android:textColor="#EDC548"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="101dp">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="2빙고 달성!"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="4빙고 달성!"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="올빙고 달성!"
+                android:textColor="#FFFFFF" />
+        </TableRow>
+
+        <TableRow>
+
+            <FrameLayout>
+
+                <ImageView
+                    android:id="@+id/iv1_c"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/btn_stamp_color"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/iv1_b"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/btn_stamp_non" />
+
+            </FrameLayout>
+
+            <FrameLayout>
+
+                <ImageView
+                    android:id="@+id/iv2_c"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/btn_stamp_color"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/iv2_b"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/btn_stamp_non" />
+
+            </FrameLayout>
+
+            <FrameLayout>
+
+                <ImageView
+                    android:id="@+id/iv3_c"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/btn_stamp_color"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/iv3_b"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/btn_stamp_non" />
+
+            </FrameLayout>
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnRandmoize"
+            android:layout_width="90dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="10dp"
+
+            android:text="재배치"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="90dp"
+            android:layout_height="45dp"
+
+            android:text="리셋"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

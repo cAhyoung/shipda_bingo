@@ -1,3 +1,4 @@
+
 package com.example.happypig.home
 
 import android.annotation.SuppressLint
@@ -12,33 +13,24 @@ import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.*
+import android.widget.Button
+import android.widget.FrameLayout
+import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.example.happypig.DBManager
-import com.example.happypig.R
-import com.example.happypig.challenge.ChallengeFragment
+import com.example.happypig.*
 import com.example.happypig.challenge.lv1BingoFragment
 import com.example.happypig.challenge.lv2BingoFragment
 import com.example.happypig.challenge.lv3BingoFragment
-import com.example.happypig.mypage.MyPageFragment
-import com.example.happypig.settingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
 
+class HomeActivity2 : AppCompatActivity(), SensorEventListener {
 
-class HomeActivity : AppCompatActivity(), SensorEventListener {
-
-    //================homeActivity================
-    lateinit var btmNav : BottomNavigationView
-
-    val homeFragment by lazy { HomeFragment() }  // by lazy : 지연 초기화, 최초 사용 시 초기화
-    val challengeFragment by lazy { ChallengeFragment() }
-    val myPageFragment by lazy { MyPageFragment() }
-
-    //================homeActivity2================
     //만보기를 위한 변수
     //센서 세팅
     private val sensorManager by lazy {
@@ -71,9 +63,13 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
     lateinit var lv1 : Fragment
     lateinit var lv2 : Fragment
     lateinit var lv3 : Fragment
-    lateinit var myPage : Fragment
+    lateinit var settings : Fragment
 
     lateinit var container1 : FrameLayout
+    lateinit var container2 : FrameLayout
+    lateinit var container3 : FrameLayout
+    lateinit var container4 : FrameLayout
+    lateinit var container5 : FrameLayout
 
     private val id by lazy {
         intent.getStringExtra("id") as String
@@ -83,26 +79,22 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
         intent.getBooleanExtra("dateChange", false) as Boolean
     }
 
-
-    //====================================================================oncreate
-    @SuppressLint("Range")
+    @SuppressLint("MissingInflatedId", "Range")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
-
-        //loadFragment(homeFragment)
-
+        setContentView(R.layout.activity_home2)
+        //val id = intent.getStringExtra("id")
         id
         var lv = 0
 
         dbManager = DBManager(this, "guruDB", null, 1)
 
         fragmentManager = supportFragmentManager
-        home = HomeFragment()
+        home = HomeFragment2()
         lv1 = lv1BingoFragment()
         lv2 = lv2BingoFragment()
         lv3 = lv3BingoFragment()
-        myPage = MyPageFragment()
+        settings = settingsFragment()
 
         val bundle = Bundle()
         bundle.putString("id", id)
@@ -111,31 +103,22 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
         lv1.arguments = bundle
         lv2.arguments = bundle
         lv3.arguments = bundle
-        myPage.arguments = bundle
+        settings.arguments = bundle
 
-        container1 = findViewById(R.id.fragmentContainer)
-
-        //처음으로 커밋되는 프래그먼트... 레벨에 따라ㅁㄴ
-        sqlitedb = dbManager.readableDatabase
-        var cursor : Cursor
-        cursor = sqlitedb.rawQuery("SELECT lv FROM personnel WHERE id = '" + id + "';", null)
-        if(cursor.moveToNext()){
-            lv = cursor.getInt(cursor.getColumnIndex("lv"))
-        }
-        else lv = 0
-
-        cursor.close()
-        sqlitedb.close()
-        
-        if(lv <= 1) fragmentManager.beginTransaction().replace(R.id.fragmentContainer, lv1).commit()
-        if(lv == 2) fragmentManager.beginTransaction().replace(R.id.fragmentContainer, lv2).commit()
-        if(lv == 3) fragmentManager.beginTransaction().replace(R.id.fragmentContainer, lv3).commit()
-
-        btmNav = findViewById(R.id.btmNavView) as BottomNavigationView
+        container1 = findViewById(R.id.container1)
+        container2 = findViewById(R.id.container2)
+        container3 = findViewById(R.id.container3)
+        container4 = findViewById(R.id.container4)
+        container5 = findViewById(R.id.container5)
 
 
-        //하단 메뉴 선택 -> 프래그먼트 전환
-        btmNav.setOnItemSelectedListener {
+        fragmentManager.beginTransaction().replace(R.id.container1, home).commit()
+
+
+        val bottom_navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+
+        bottom_navigation.setOnItemSelectedListener {
             sqlitedb = dbManager.readableDatabase
             var cursor : Cursor
             cursor = sqlitedb.rawQuery("SELECT lv FROM personnel WHERE id = '" + id + "';", null)
@@ -149,17 +132,17 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
 
 
             when(it.itemId) {
-                R.id.home -> {
+                R.id.tab_home -> {
                     changeFragment(1)
                     true
                 }
-                R.id.bingo -> {
+                R.id.tab_bingo -> {
                     if (lv <= 1) changeFragment(2)
                     if (lv == 2) changeFragment(3)
                     if (lv >=3 ) changeFragment(4)
                     true
                 }
-                R.id.mypage -> {
+                R.id.tab_setting -> {
                     changeFragment(5)
                     true
                 }
@@ -167,31 +150,7 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
                     true
                 }
             }
-
         }
-
-        /*
-        btmNav.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.home -> {
-                    loadFragment(homeFragment)
-                    true
-                }
-                R.id.bingo -> {
-                    loadFragment(challengeFragment)
-                    true
-                }
-                R.id.mypage -> {
-                    loadFragment(myPageFragment)
-                    true
-                }
-                else -> {
-                    true
-                }
-            }
-        }
-
-         */
 
 
         //만보기
@@ -262,6 +221,7 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
 
     override fun onStart() {
         super.onStart()
+
         if (stepCountSensor != null) {
             // 센서 속도 설정
             // * 옵션
@@ -276,17 +236,7 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
                 SensorManager.SENSOR_DELAY_FASTEST
             );
         }
-
     }
-    /*
-    // fragment 불러오는 함수
-    private fun loadFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragmentContainer, fragment)
-        transaction.commit()
-    }
-
-     */
 
     @SuppressLint("Range")
     override fun onSensorChanged(event: SensorEvent?) {
@@ -357,29 +307,28 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
     override fun onPointerCaptureChanged(hasCapture: Boolean) {
         super.onPointerCaptureChanged(hasCapture)
     }
-
     //프래그먼트 전환
     fun changeFragment(index : Int) {
         when(index) {
             1-> {
-                supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, home).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container1, home).commit()
                 layoutForManbogi.visibility = View.VISIBLE
             }
             2-> {
-                supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, lv1).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container1, lv1).commit()
                 layoutForManbogi.visibility = View.GONE
             }
             3-> {
-                supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, lv2).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container1, lv2).commit()
                 layoutForManbogi.visibility = View.GONE
             }
             4 -> {
-                supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, lv3).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container1, lv3).commit()
                 layoutForManbogi.visibility = View.GONE
             }
 
             5 -> {
-                supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, myPage).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container1, settings).commit()
                 layoutForManbogi.visibility = View.GONE
             }
         }

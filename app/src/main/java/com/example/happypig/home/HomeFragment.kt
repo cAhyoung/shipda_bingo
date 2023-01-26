@@ -1,26 +1,38 @@
 package com.example.happypig.home
 
 import android.app.AlertDialog
+import android.app.Dialog
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.ImageView
 import com.example.happypig.R
 import com.example.happypig.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment() {
 
-    private lateinit var binding : FragmentHomeBinding
+    private var id: String? = null
 
-    lateinit var btnTrash : ImageButton
+    private lateinit var binding: FragmentHomeBinding
+
+    lateinit var btnTrash: ImageButton
     lateinit var btnGlass: ImageButton
     lateinit var btnPaper: ImageButton
-    lateinit var btnPlastic : ImageButton
-    lateinit var btnVinyl : ImageButton
-    lateinit var btnCan : ImageButton
+    lateinit var btnPlastic: ImageButton
+    lateinit var btnVinyl: ImageButton
+    lateinit var btnCan: ImageButton
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            id = it.getString("id")
+        }
+    }
 
 
     override fun onCreateView(
@@ -50,6 +62,9 @@ class HomeFragment : Fragment() {
         btnVinyl = view.findViewById(R.id.btnVinyl)
         btnCan = view.findViewById(R.id.btnCan)
 
+
+        btnTrash = view.findViewById(R.id.btnTrash)
+        var dialogView = View.inflate(homeActivity, R.layout.dlgimg, null)
         btnTrash.setOnClickListener {
             var dialogView = View.inflate(hActivity, R.layout.dialog_trash, null)
             var dlg = AlertDialog.Builder(hActivity)
@@ -117,5 +132,7 @@ class HomeFragment : Fragment() {
     }
 
 
-}
+ }
+
+
 
