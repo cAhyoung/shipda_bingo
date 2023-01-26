@@ -1,4 +1,4 @@
-package com.example.happypig
+package com.example.happypig.challenge
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -16,6 +16,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.happypig.DBManager
+import com.example.happypig.R
+import com.example.happypig.home.HomeActivity
+import com.example.happypig.home.HomeActivity2
 import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -126,7 +130,7 @@ class lv3BingoFragment : Fragment() {
 
         var levelupFlag = false
         var isFirst = true
-        val homeActivity = activity as HomeActivity2
+        val homeActivity = activity as HomeActivity
 
         if (userlevel > level) {
             levelupFlag = true
@@ -315,7 +319,7 @@ class lv3BingoFragment : Fragment() {
         var randomize = view.findViewById<Button>(R.id.btnRandmoize)
         randomize.setOnClickListener {
             reset(tv, checks, checked)
-            bingo.text = "0"
+            bingo.text = "0 빙고!"
 
 
             //랜덤하게 재배치
