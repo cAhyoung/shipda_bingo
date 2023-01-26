@@ -64,7 +64,7 @@ class HomeFragment : Fragment() {
 
 
         btnTrash = view.findViewById(R.id.btnTrash)
-        var dialogView = View.inflate(homeActivity, R.layout.dlgimg, null)
+        var dialogView = View.inflate(hActivity, R.layout.dlgimg, null)
         btnTrash.setOnClickListener {
             var dialogView = View.inflate(hActivity, R.layout.dialog_trash, null)
             var dlg = AlertDialog.Builder(hActivity)
