@@ -14,6 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:orientation="horizontal">
 
 
@@ -22,7 +23,7 @@
                 android:layout_width="10dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                tools:src="@tools:sample/avatars" />
+                tools:src="@drawable/person" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -32,6 +33,7 @@
 
                 <TextView
                     android:id="@+id/txtViewNick"
+                    android:layout_marginTop="30dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="nickname" />
@@ -40,7 +42,8 @@
                     android:id="@+id/txtViewLevel"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Lv. 1" />
+                    android:text="Lv. 1"
+                    android:textAlignment="textStart" />
 
             </LinearLayout>
 
@@ -50,62 +53,94 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="내정보"/>
+                android:layout_height="20dp"
+
+                android:background="@drawable/background"
+                android:text="    내정보" />
 
             <Button
                 android:id="@+id/btnMemberInfo"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="회원정보 조회"/>
+                android:backgroundTint="#FFFFFF"
+                android:style="?android:attr/borderlessButtonStyle"
+                android:text="회원정보 조회"
+                android:textAlignment="textStart"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/btnChangeNick"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="닉네임 변경"/>
+                android:backgroundTint="#FFFFFF"
+                android:style="?android:attr/borderlessButtonStyle"
+                android:text="닉네임 변경"
+                android:textAlignment="textStart"
+                android:textColor="@color/black" />
 
 
             <Button
                 android:id="@+id/btnChangePw"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="비밀번호 변경"/>
+                android:backgroundTint="#FFFFFF"
+                android:style="?android:attr/borderlessButtonStyle"
+                android:text="비밀번호 변경"
+                android:textAlignment="textStart"
+                android:textColor="@color/black" />
 
 
             <Button
                 android:id="@+id/btnLogOut"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="로그아웃"/>
+                android:backgroundTint="#FFFFFF"
+                android:style="?android:attr/borderlessButtonStyle"
+                android:text="로그아웃"
+                android:textAlignment="textStart"
+                android:textColor="@color/black" />
 
 
             <Button
                 android:id="@+id/btnDeleteInfo"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="회원탈퇴"/>
+                android:backgroundTint="#FFFFFF"
+                android:style="?android:attr/borderlessButtonStyle"
+                android:text="회원탈퇴"
+                android:textAlignment="textStart"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="기타"/>
+                android:background="@drawable/background"
+                android:text="    기타"
+                android:layout_height="20dp"/>
 
             <Button
                 android:id="@+id/btnHelp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="도움말"/>
+                android:backgroundTint="#FFFFFF"
+                android:style="?android:attr/borderlessButtonStyle"
+                android:text="도움말"
+                android:textAlignment="textStart"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/btnAnnounce"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="회원탈퇴"/>
+                android:backgroundTint="#FFFFFF"
+                android:style="?android:attr/borderlessButtonStyle"
+                android:text="회원탈퇴"
+                android:textAlignment="textStart"
+                android:textColor="@color/black" />
 
         </LinearLayout>
 
