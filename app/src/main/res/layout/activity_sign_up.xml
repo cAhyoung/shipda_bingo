@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".login.SignUpActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="24dp"
+        android:text="회원가입"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    >
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="이메일 *"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <EditText
+                            android:id="@+id/edtSignUp_email"
+                            android:layout_width="173dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="25dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/btn_pho_id"
+                            android:hint="  예) swu@gmail.com"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/img_check_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_check_24"
+                            android:visibility="invisible" />
+
+                        <Button
+                            android:id="@+id/btnSignUp_emailCheck"
+                            android:layout_width="95dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="25dp"
+                            android:background="@drawable/btn_pho_login"
+                            android:text="중복 확인"
+                            app:backgroundTint="#018C6A" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvSignUp_warning_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:text="경고문구"
+                        android:textColor="#ff0000"
+                        android:textSize="14sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="아이디 *"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/edtSignUp_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="25dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/btn_pho_id"
+                            android:hint="  예) swu1234"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/img_check_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_check_24"
+                            android:visibility="invisible" />
+
+                        <Button
+                            android:id="@+id/btnSignUp_idCheck"
+                            android:layout_width="95dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="25dp"
+                            android:background="@drawable/btn_pho_login"
+                            android:text="중복 확인"
+                            app:backgroundTint="#018C6A" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvSignUp_warning_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:text="경고문구"
+                        android:textColor="#ff0000"
+                        android:textSize="10sp"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="비밀번호 *"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <EditText
+                            android:id="@+id/edtSignUp_pw"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="25dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/btn_pho_id"
+                            android:hint="  영문, 숫자 조합 8~16자"
+                            android:inputType="textPassword"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/img_check_pw"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_check_24"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvSignUp_warning_pw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:text="경고문구"
+                        android:textColor="#ff0000"
+                        android:textSize="10sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="비밀번호 확인 *"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+                        <!-- 일단 리니어 레이아웃 안에 체크 넣어놨는데, 에디트 텍스트랑 겹치게 하려면 프레임 레이아웃? -->
+                        <EditText
+                            android:id="@+id/edtSignUp_pw2"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="25dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/btn_pho_id"
+                            android:inputType="textPassword"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/img_check_pw2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_check_24"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvSignUp_warning_pw2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="1dp"
+                        android:text="경고문구"
+                        android:textColor="#ff0000"
+                        android:textSize="10sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="닉네임 *"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <EditText
+                            android:id="@+id/edtSignUp_nickname"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="25dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/btn_pho_id"
+                            android:hint="  예) iamswuny"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/img_check_nickname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_baseline_check_24"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvSignUp_warning_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:text="경고문구"
+                        android:textColor="#ff0000"
+                        android:textSize="10sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/cbSignUp_emailAgree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:text="이메일 정보 이용 동의"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvSignUp_readme"
+                        android:layout_width="71dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="25dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="이용 약관" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnSignUp_SignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/btn_pho_login"
+                    android:enabled="false"
+                    android:text="회원가입 완료"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#018C6A" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mypage.Help"
-    android:orientation="vertical">
+    tools:context=".mypage.detailpage.AnnounceText">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarHelp"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/teal_700"
@@ -16,12 +15,6 @@
         android:theme="?attr/actionBarSize"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:title="도움말"/>
+        app:title="앱사용 관련 공지사항"/>
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="~~~help~~~" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
