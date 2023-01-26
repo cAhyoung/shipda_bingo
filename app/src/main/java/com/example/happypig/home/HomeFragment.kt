@@ -151,7 +151,7 @@ class HomeFragment : Fragment() {
         override fun run() {
             while (true) {
                 try {
-                    Thread.sleep(2000)
+                    Thread.sleep(3000)
                     handler.sendEmptyMessage(0)
                 } catch (e: InterruptedException) {
                     Log.d("interupt", "interupt발생")
