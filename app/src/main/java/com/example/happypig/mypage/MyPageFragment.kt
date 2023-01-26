@@ -14,6 +14,7 @@ import com.example.happypig.databinding.FragmentMyPageBinding
 
 class MyPageFragment : Fragment() {
 
+
     // 내정보
     lateinit var btnMemberInfo : Button
     lateinit var btnChangeNick : Button
@@ -34,6 +35,7 @@ class MyPageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
 
         val view = inflater.inflate(R.layout.fragment_my_page, container, false)
 
