@@ -41,9 +41,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
 
-            <TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                <FrameLayout>
+                <FrameLayout
+                    android:layout_weight="1">
 
                     <ImageView
                         android:id="@+id/check1"
@@ -56,15 +59,16 @@
                         android:id="@+id/tv1"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
+                        android:layout_marginLeft="30dp"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="tv1"
                         android:textColor="@color/white"
-                        android:textSize="12dp"
-                        android:layout_marginLeft="30dp"/>
+                        android:textSize="12dp" />
                 </FrameLayout>
 
-                <FrameLayout>
+                <FrameLayout
+                    android:layout_weight="1">
 
                     <ImageView
                         android:id="@+id/check2"
@@ -84,7 +88,8 @@
                         android:textSize="12dp" />
                 </FrameLayout>
 
-                <FrameLayout>
+                <FrameLayout
+                    android:layout_weight="1">
 
                     <ImageView
                         android:id="@+id/check3"

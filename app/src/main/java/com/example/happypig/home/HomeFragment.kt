@@ -17,7 +17,7 @@ import com.example.happypig.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
-    private lateinit var binding : FragmentHomeBinding
+    //private lateinit var binding : FragmentHomeBinding
 
     lateinit var btnTrash : ImageButton
     lateinit var btnGlass: ImageButton
