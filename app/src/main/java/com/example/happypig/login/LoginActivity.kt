@@ -51,6 +51,8 @@ class LoginActivity : AppCompatActivity() {
 
         dbManager = DBManager(this, "guruDB", null, 1)
 
+        loadData()
+
         //로그인 버튼 클릭
         //id, pw에 null 들어오는지 체크하기
         btnLogin_login.setOnClickListener {
@@ -83,6 +85,10 @@ class LoginActivity : AppCompatActivity() {
                         sqlitedb.close()
 
                         if (pass == dbPW) {
+                            //로그인 정보 저장 for 자동 로그인
+                            saveData(user, pass)
+
+
                             //Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
                             //홈 화면으로 액티비티 전환하기
                             //intent에 id 값 넣어서
@@ -174,6 +180,26 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+    }
+
+    private fun saveData(id : String, pw : String) {
+        var pref = this.getPreferences(0)
+        var editor = pref.edit()
+
+        editor.putString("KEY_id", edtLogin_id.text.toString()).apply()
+        editor.putString("KEY_pw", edtLogin_pw.text.toString()).apply()
+    }
+
+    private fun loadData() {
+        var pref = this.getPreferences(0)
+        var id = pref.getString("KEY_id", "")
+        var pw = pref.getString("KEY_pw", "")
+
+        if (id!!.length != 0 && pw!!.length != 0) {
+            edtLogin_id.setText(id)
+            edtLogin_pw.setText(pw)
+        }
 
     }
 
