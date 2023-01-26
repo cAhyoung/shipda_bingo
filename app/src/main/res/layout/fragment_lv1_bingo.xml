@@ -9,13 +9,11 @@
     android:orientation="vertical"
     tools:context=".challenge.lv1BingoFragment">
 
-
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="level 1"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
@@ -27,14 +25,13 @@
         <Button
             android:id="@+id/back"
             android:layout_width="50dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
-            android:backgroundTintMode="add"
             android:enabled="false"
-            android:text="Back"
-            android:textColor="@color/black"
-            app:backgroundTint="#FFFFFF" />
+            android:text="B a c k"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
 
         <TableLayout
             android:layout_width="0dp"
@@ -48,20 +45,21 @@
                     <ImageView
                         android:id="@+id/check1"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:src="@drawable/ic_baseline_check_24"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="35dp"
+                        android:src="@drawable/btn_check"
                         android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tv1"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="tv1"
                         android:textColor="@color/white"
                         android:textSize="12dp"
-                        android:layout_marginLeft="30dp"/>
+                        android:layout_marginLeft="35dp"/>
                 </FrameLayout>
 
                 <FrameLayout>
@@ -69,19 +67,21 @@
                     <ImageView
                         android:id="@+id/check2"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:src="@drawable/ic_baseline_check_24"
-                        android:visibility="gone" />
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="5dp"/>
 
                     <TextView
                         android:id="@+id/tv2"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="tv2"
                         android:textColor="@color/white"
-                        android:textSize="12dp" />
+                        android:textSize="12dp"
+                        android:layout_marginLeft="5dp"/>
                 </FrameLayout>
 
                 <FrameLayout>
@@ -89,19 +89,21 @@
                     <ImageView
                         android:id="@+id/check3"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:src="@drawable/ic_baseline_check_24"
-                        android:visibility="gone" />
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="10dp"/>
 
                     <TextView
                         android:id="@+id/tv3"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="tv3"
                         android:textColor="@color/white"
-                        android:textSize="12dp" />
+                        android:textSize="12dp"
+                        android:layout_marginLeft="10dp"/>
                 </FrameLayout>
 
             </TableRow>
@@ -113,20 +115,21 @@
                     <ImageView
                         android:id="@+id/check4"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:src="@drawable/ic_baseline_check_24"
-                        android:visibility="gone" />
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="35dp"/>
 
                     <TextView
                         android:id="@+id/tv4"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="tv4"
                         android:textColor="@color/white"
                         android:textSize="12dp"
-                        android:layout_marginLeft="30dp"/>
+                        android:layout_marginLeft="35dp"/>
                 </FrameLayout>
 
                 <FrameLayout>
@@ -134,19 +137,21 @@
                     <ImageView
                         android:id="@+id/check5"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:src="@drawable/ic_baseline_check_24"
-                        android:visibility="gone" />
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="5dp"/>
 
                     <TextView
                         android:id="@+id/tv5"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="tv5"
                         android:textColor="@color/white"
-                        android:textSize="12dp" />
+                        android:textSize="12dp"
+                        android:layout_marginLeft="5dp"/>
                 </FrameLayout>
 
                 <FrameLayout>
@@ -154,19 +159,21 @@
                     <ImageView
                         android:id="@+id/check6"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:src="@drawable/ic_baseline_check_24"
-                        android:visibility="gone" />
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="10dp"/>
 
                     <TextView
                         android:id="@+id/tv6"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="tv6"
                         android:textColor="@color/white"
-                        android:textSize="12dp" />
+                        android:textSize="12dp"
+                        android:layout_marginLeft="10dp"/>
                 </FrameLayout>
             </TableRow>
 
@@ -177,20 +184,21 @@
                     <ImageView
                         android:id="@+id/check7"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:src="@drawable/ic_baseline_check_24"
-                        android:visibility="gone" />
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="35dp"/>
 
                     <TextView
                         android:id="@+id/tv7"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="tv7"
                         android:textColor="@color/white"
                         android:textSize="12dp"
-                        android:layout_marginLeft="30dp"/>
+                        android:layout_marginLeft="35dp"/>
                 </FrameLayout>
 
                 <FrameLayout>
@@ -198,19 +206,21 @@
                     <ImageView
                         android:id="@+id/check8"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:src="@drawable/ic_baseline_check_24"
-                        android:visibility="gone" />
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="5dp"/>
 
                     <TextView
                         android:id="@+id/tv8"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="tv8"
                         android:textColor="@color/white"
-                        android:textSize="12dp" />
+                        android:textSize="12dp"
+                        android:layout_marginLeft="5dp"/>
                 </FrameLayout>
 
                 <FrameLayout>
@@ -218,19 +228,21 @@
                     <ImageView
                         android:id="@+id/check9"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:src="@drawable/ic_baseline_check_24"
-                        android:visibility="gone" />
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="10dp"/>
 
                     <TextView
                         android:id="@+id/tv9"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="tv9"
                         android:textColor="@color/white"
-                        android:textSize="12dp" />
+                        android:textSize="12dp"
+                        android:layout_marginLeft="10dp"/>
                 </FrameLayout>
             </TableRow>
 
@@ -239,13 +251,13 @@
         <Button
             android:id="@+id/next"
             android:layout_width="50dp"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="5dp"
             android:enabled="false"
-            android:text="Next"
-            android:textColor="@color/black"
-            app:backgroundTint="#FFFFFF" />
+            android:text="N e x t"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
 
     </LinearLayout>
 
@@ -254,6 +266,7 @@
         android:id="@+id/bingo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="빙고 개수"
         android:textColor="#EDC548"
         android:textSize="14sp"
@@ -297,7 +310,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginStart="10dp"
-                    android:src="@drawable/btn_stamp_color"
+                    android:src="@drawable/btm_stamp_color"
                     android:visibility="invisible" />
 
                 <ImageView
@@ -305,7 +318,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginStart="10dp"
-                    android:src="@drawable/btn_stamp_non" />
+                    android:src="@drawable/btm_stamp_non" />
 
             </FrameLayout>
 
@@ -316,7 +329,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginStart="10dp"
-                    android:src="@drawable/btn_stamp_color"
+                    android:src="@drawable/btm_stamp_color"
                     android:visibility="invisible" />
 
                 <ImageView
@@ -324,7 +337,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginStart="10dp"
-                    android:src="@drawable/btn_stamp_non" />
+                    android:src="@drawable/btm_stamp_non" />
 
             </FrameLayout>
 
@@ -335,7 +348,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginStart="10dp"
-                    android:src="@drawable/btn_stamp_color"
+                    android:src="@drawable/btm_stamp_color"
                     android:visibility="invisible" />
 
                 <ImageView
@@ -343,7 +356,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginStart="10dp"
-                    android:src="@drawable/btn_stamp_non" />
+                    android:src="@drawable/btm_stamp_non" />
 
             </FrameLayout>
         </TableRow>
