@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bingo_back"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".challenge.lv3BingoFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="level 3"
+        android:layout_marginTop="60dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:enabled="true"
+            android:text="B a c k"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TableRow>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check1"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="35dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv1"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        android:layout_marginLeft="35dp"/>
+                </FrameLayout>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check2"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv2"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        android:layout_marginLeft="5dp"/>
+                </FrameLayout>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check3"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/tv3"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv3"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        android:layout_marginLeft="10dp"/>
+                </FrameLayout>
+
+            </TableRow>
+
+            <TableRow>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check4"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="35dp"/>
+
+                    <TextView
+                        android:id="@+id/tv4"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv4"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        android:layout_marginLeft="35dp"/>
+                </FrameLayout>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check5"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:id="@+id/tv5"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv5"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        android:layout_marginLeft="5dp"/>
+                </FrameLayout>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check6"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/tv6"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv6"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        android:layout_marginLeft="10dp"/>
+                </FrameLayout>
+            </TableRow>
+
+            <TableRow>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check7"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="35dp"/>
+
+                    <TextView
+                        android:id="@+id/tv7"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv7"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        android:layout_marginLeft="35dp"/>
+                </FrameLayout>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check8"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="5dp"/>
+
+                    <TextView
+                        android:id="@+id/tv8"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv8"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        android:layout_marginLeft="5dp"/>
+                </FrameLayout>
+
+                <FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/check9"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/btn_check"
+                        android:visibility="gone"
+                        android:layout_marginLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/tv9"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="tv9"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        android:layout_marginLeft="10dp"/>
+                </FrameLayout>
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:enabled="false"
+            android:text="N e x t"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/bingo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="빙고 개수"
+        android:textColor="#EDC548"
+        android:textSize="14sp"
+        android:textStyle="bold"/>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="101dp">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="2빙고 달성!"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="4빙고 달성!"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="올빙고 달성!"
+                android:textColor="#FFFFFF" />
+        </TableRow>
+
+        <TableRow>
+
+            <FrameLayout>
+
+                <ImageView
+                    android:id="@+id/iv1_c"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/btm_stamp_color"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/iv1_b"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/btm_stamp_non" />
+
+            </FrameLayout>
+
+            <FrameLayout>
+
+                <ImageView
+                    android:id="@+id/iv2_c"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/btm_stamp_color"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/iv2_b"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/btm_stamp_non" />
+
+            </FrameLayout>
+
+            <FrameLayout>
+
+                <ImageView
+                    android:id="@+id/iv3_c"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/btm_stamp_color"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/iv3_b"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/btm_stamp_non" />
+
+            </FrameLayout>
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnRandmoize"
+            android:layout_width="90dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="#F29886"
+            android:text="재배치"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="90dp"
+            android:layout_height="45dp"
+            android:text="리셋"
+            android:textColor="@color/white"
+            android:backgroundTint="#4AA8D8"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

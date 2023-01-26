@@ -45,6 +45,7 @@
                     android:text="Lv. 1"
                     android:textAlignment="textStart" />
 
+
             </LinearLayout>
 
 
@@ -59,7 +60,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-
                 android:background="@drawable/background"
                 android:text="    내정보" />
 
@@ -84,6 +84,7 @@
                 android:textColor="@color/black" />
 
 
+
             <Button
                 android:id="@+id/btnChangePw"
                 android:layout_width="match_parent"
@@ -95,6 +96,7 @@
                 android:textColor="@color/black" />
 
 
+
             <Button
                 android:id="@+id/btnLogOut"
                 android:layout_width="match_parent"
@@ -104,6 +106,7 @@
                 android:text="로그아웃"
                 android:textAlignment="textStart"
                 android:textColor="@color/black" />
+
 
 
             <Button
@@ -124,6 +127,18 @@
 
             <Button
                 android:id="@+id/btnHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FFFFFF"
+                android:style="?android:attr/borderlessButtonStyle"
+                android:text="도움말"
+                android:textAlignment="textStart"
+                android:textColor="@color/black" />
+
+           
+
+            <Button
+                android:id="@+id/btnHelp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FFFFFF"
@@ -138,9 +153,11 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FFFFFF"
                 android:style="?android:attr/borderlessButtonStyle"
-                android:text="회원탈퇴"
+                android:text="공지사항"
                 android:textAlignment="textStart"
                 android:textColor="@color/black" />
+
+              
 
         </LinearLayout>
 
