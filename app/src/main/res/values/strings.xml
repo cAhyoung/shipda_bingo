@@ -3,6 +3,7 @@
     <string name="emailAgree">이메일 사용 이용 약관에 대한 내용입니다. 수정이 필요합니다.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="present_nick">현재 닉네임</string>
 
 
     <string-array name="level1">
