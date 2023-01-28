@@ -31,6 +31,7 @@ class MyPageFragment : Fragment() {
     lateinit var nick : String
     var lv : Int = 0
 
+
     // 내정보
     lateinit var btnMemberInfo : Button
     lateinit var btnChangeNick : Button
@@ -61,6 +62,7 @@ class MyPageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val view = inflater.inflate(R.layout.fragment_my_page, container, false)
         val hActivity = activity as HomeActivity
         val myHelper = DBManager(hActivity, "guruDB", null, 1)
