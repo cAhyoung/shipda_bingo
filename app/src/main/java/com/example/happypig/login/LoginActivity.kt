@@ -1,7 +1,9 @@
 package com.example.happypig.login
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
+import android.content.SharedPreferences
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +13,7 @@ import com.example.happypig.DBManager
 import com.example.happypig.R
 import com.example.happypig.home.HomeActivity
 import com.example.happypig.home.HomeActivity2
+import com.example.happypig.tutorial.tutorialActivity
 import java.util.*
 
 //로그인 페이지
@@ -50,6 +53,41 @@ class LoginActivity : AppCompatActivity() {
 
 
         dbManager = DBManager(this, "guruDB", null, 1)
+
+
+        //최초 실행 여부 판단
+        var pref = getSharedPreferences("checkFirst", Activity.MODE_PRIVATE)
+        var checkFrist = pref.getBoolean("checkFirst",false)
+
+        //false일 경우 최초 실행
+        if(!checkFrist) {
+            var editor = pref.edit()
+            editor.putBoolean("checkFirst", true)
+            editor.apply()
+            finish()
+
+            intent = Intent(this, tutorialActivity::class.java)
+            startActivity(intent)
+
+        }
+        /*
+        //READ ME!!!!!!!!!!!!!!!============================================================!!!!!!!!!!!!!!!!!!!!!!!
+        //위의 IF문으로 최초 실행 판단 후 튜토리얼 액티비티를 한 번만 실행합니다.
+        //아래 ELSE문은 앱을 실행할 때마다 튜토리얼 액티비티를 실행하기 위한 코드입니다.
+        //디자인 작업 하실 때 각주 지우고 작업하시면서 실행하고 확인하시고
+        //완성됐으면 다시 ELSE문 전체 각주처리 해주세요
+        else {
+            var editor = pref.edit()
+            editor.putBoolean("checkFirst", true)
+            editor.apply()
+            finish()
+
+            intent = Intent(this, tutorialActivity::class.java)
+            startActivity(intent)
+        }
+        
+         */
+
 
         loadData()
 
