@@ -3,13 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/tutor_home1"
     tools:context=".tutorial.homeTutorialFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="만보기 설명 캡쳐 이미지 들어가는 프래그먼트"
-        android:background="#ffff00"/>
+
 
 </FrameLayout>
