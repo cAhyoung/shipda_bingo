@@ -31,16 +31,14 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/txtViewNick"
+                    android:id="@+id/nickTv"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="nickname" />
+                    android:layout_height="match_parent"/>
 
                 <TextView
-                    android:id="@+id/txtViewLevel"
+                    android:id="@+id/lvTv"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Lv. 1" />
+                    android:layout_height="match_parent"/>
 
             </LinearLayout>
 

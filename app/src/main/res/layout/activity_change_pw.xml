@@ -1,14 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".mypage.ChangePw">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarChangePw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        android:minHeight="80dp"
+        android:theme="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:title="비밀번호 변경"/>
+
+    <EditText
+        android:id="@+id/presentPw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="기존 비밀번호를 작성하세요"
+        android:layout_gravity="center"
+        android:padding="10dp"/>
+
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/notPresentPwTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="현재 비밀번호가 아닙니다."
+        android:visibility="invisible"
+        android:padding="10dp"/>
+
+    <EditText
+        android:id="@+id/newPw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="새로운 비밀번호를 작성하세요"
+        android:layout_gravity="center"
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/rejectPwTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 양식에 맞지 않습니다.(영문+숫자 8~16자)"
+        android:visibility="invisible"
+        android:padding="10dp"/>
+
+
+    <Button
+        android:id="@+id/acceptBtn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="~~~change pw~~~" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="confirm"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
