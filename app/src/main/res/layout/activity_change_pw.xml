@@ -22,6 +22,7 @@
         android:id="@+id/presentPw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:hint="기존 비밀번호를 작성하세요"
         android:layout_gravity="center"
         android:padding="10dp"/>
@@ -38,6 +39,7 @@
         android:id="@+id/newPw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:hint="새로운 비밀번호를 작성하세요"
         android:layout_gravity="center"
         android:padding="10dp"/>
@@ -55,6 +57,7 @@
         android:id="@+id/acceptBtn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="confirm"
         android:layout_gravity="center"/>
 
