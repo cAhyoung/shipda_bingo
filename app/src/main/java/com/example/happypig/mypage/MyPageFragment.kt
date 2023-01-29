@@ -145,6 +145,9 @@ class MyPageFragment : Fragment() {
             dialog2.setPositiveButton("예", DialogInterface.OnClickListener{dialog, _ ->
                 val myHelper = DBManager(hActivity, "guruDB", null, 1)
                 var db = myHelper.writableDatabase
+                db.execSQL("DELETE FROM bingo1 WHERE id = '" + id + "';")
+                db.execSQL("DELETE FROM bingo2 WHERE id = '" + id + "';")
+                db.execSQL("DELETE FROM bingo3 WHERE id = '" + id + "';")
                 db.execSQL("DELETE FROM personnel WHERE id = '" + id + "';")
                 db.close()
                 val intent = Intent(view.context, LoginActivity::class.java)
