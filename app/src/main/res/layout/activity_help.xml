@@ -22,6 +22,8 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="~~~help~~~" />
+        android:textSize="13dp"
+        android:layout_gravity="center"
+        android:text=" 이 앱은 환경을 위해 우리가 해야할 일을 빙고로 수행하는 갓생챌린지입니다. \n       환경을 위해 해야할 일들을 게임을 통해 재미있게 수행할 수 있어요.  " />
 
 </LinearLayout>
