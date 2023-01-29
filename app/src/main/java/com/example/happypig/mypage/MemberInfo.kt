@@ -7,8 +7,7 @@ import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import com.example.happypig.DBManager
 import com.example.happypig.R
-import org.w3c.dom.Text
-import kotlin.properties.Delegates
+
 
 class MemberInfo : AppCompatActivity() {
 
