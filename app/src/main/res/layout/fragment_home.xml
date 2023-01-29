@@ -5,10 +5,11 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:visibility="visible">
+    android:visibility="visible"
+    android:background="@drawable/home_back3">
 
 
-            <!-- manbo -->
+    <!-- manbo -->
             <!--
             <LinearLayout
                 android:layout_width="match_parent"
@@ -47,39 +48,40 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:layout_marginTop="133dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp">
 
                     <ImageButton
                         android:id="@+id/btnTrash"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:adjustViewBounds="true"
                         android:paddingRight="5dp"
+                        android:layout_marginLeft="41dp"
+                        android:layout_marginRight="5dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/trash_btn"
+                        android:background="@drawable/trash_btn2"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
                         android:id="@+id/btnGlass"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:adjustViewBounds="true"
                         android:paddingRight="5dp"
+                        android:layout_marginRight="5dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/glass_btn"
+                        android:background="@drawable/glass_btn2"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
                         android:id="@+id/btnPaper"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:adjustViewBounds="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/paper_btn"
+                        android:background="@drawable/paper_btn2"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                 </LinearLayout>
@@ -94,31 +96,37 @@
 
                     <ImageButton
                         android:id="@+id/btnPlastic"
-                        android:layout_width="wrap_content"
-                        android:layout_height="144dp"
-                        android:layout_weight="1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="41dp"
                         android:paddingRight="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/plastic_btn"
+                        android:background="@drawable/plastic_btn2"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
                         android:id="@+id/btnVinyl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="142dp"
-                        android:layout_weight="1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:paddingRight="5dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/vinyl_btn"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/vinyl_btn2"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                     <ImageButton
                         android:id="@+id/btnCan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="139dp"
-                        android:layout_weight="1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/can_btn"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/can_btn2"
                         tools:ignore="SpeakableTextPresentCheck" />
 
                 </LinearLayout>

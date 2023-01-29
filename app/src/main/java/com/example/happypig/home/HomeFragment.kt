@@ -17,8 +17,7 @@ import com.example.happypig.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
-    //private lateinit var binding : FragmentHomeBinding
-
+    // 분리수거 안내 버튼
     lateinit var btnTrash : ImageButton
     lateinit var btnGlass: ImageButton
     lateinit var btnPaper: ImageButton
@@ -26,6 +25,7 @@ class HomeFragment : Fragment() {
     lateinit var btnVinyl : ImageButton
     lateinit var btnCan : ImageButton
 
+    // 자동 배너를 위한 변수들
     lateinit var viewPagerAd : ViewPager2
     var currentPosition = 0
     val handler = Handler(Looper.getMainLooper()) {
@@ -133,20 +133,20 @@ class HomeFragment : Fragment() {
 
         return view
     }
-
+    // 배너 이미지가 들어간 array 만들기
     private fun getAdBanners() : ArrayList<Int> {
         return arrayListOf<Int> (
             R.drawable.ad_banner1,
             R.drawable.ad_banner2
                 )
     }
-
+    // 페이지가 2페이지가 되면 다시 처음으로 돌아가서 배너를 돌리도록 함
     fun setPage() {
         if(currentPosition == 2) currentPosition = 0
         viewPagerAd.setCurrentItem(currentPosition, true)
         currentPosition += 1
     }
-
+    // 자동으로 배너 넘기기
     inner class PagerRunnable : Runnable {
         override fun run() {
             while (true) {

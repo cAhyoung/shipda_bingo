@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tutor_home1"
+    tools:context=".tutorial.homeTutorialFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+</FrameLayout>

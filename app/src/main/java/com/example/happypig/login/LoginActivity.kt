@@ -1,7 +1,9 @@
 package com.example.happypig.login
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
+import android.content.SharedPreferences
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +13,7 @@ import com.example.happypig.DBManager
 import com.example.happypig.R
 import com.example.happypig.home.HomeActivity
 import com.example.happypig.home.HomeActivity2
+import com.example.happypig.tutorial.tutorialActivity
 import java.util.*
 
 //로그인 페이지
@@ -51,6 +54,43 @@ class LoginActivity : AppCompatActivity() {
 
         dbManager = DBManager(this, "guruDB", null, 1)
 
+
+        //최초 실행 여부 판단
+        var pref = getSharedPreferences("checkFirst", Activity.MODE_PRIVATE)
+        var checkFrist = pref.getBoolean("checkFirst",false)
+
+        //false일 경우 최초 실행
+        if(!checkFrist) {
+            var editor = pref.edit()
+            editor.putBoolean("checkFirst", true)
+            editor.apply()
+            finish()
+
+            intent = Intent(this, tutorialActivity::class.java)
+            startActivity(intent)
+
+        }
+        /*
+        //READ ME!!!!!!!!!!!!!!!============================================================!!!!!!!!!!!!!!!!!!!!!!!
+        //위의 IF문으로 최초 실행 판단 후 튜토리얼 액티비티를 한 번만 실행합니다.
+        //아래 ELSE문은 앱을 실행할 때마다 튜토리얼 액티비티를 실행하기 위한 코드입니다.
+        //디자인 작업 하실 때 각주 지우고 작업하시면서 실행하고 확인하시고
+        //완성됐으면 다시 ELSE문 전체 각주처리 해주세요
+        else {
+            var editor = pref.edit()
+            editor.putBoolean("checkFirst", true)
+            editor.apply()
+            finish()
+
+            intent = Intent(this, tutorialActivity::class.java)
+            startActivity(intent)
+        }
+        
+         */
+
+
+        loadData()
+
         //로그인 버튼 클릭
         //id, pw에 null 들어오는지 체크하기
         btnLogin_login.setOnClickListener {
@@ -83,6 +123,10 @@ class LoginActivity : AppCompatActivity() {
                         sqlitedb.close()
 
                         if (pass == dbPW) {
+                            //로그인 정보 저장 for 자동 로그인
+                            saveData(user, pass)
+
+
                             //Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
                             //홈 화면으로 액티비티 전환하기
                             //intent에 id 값 넣어서
@@ -174,6 +218,26 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+    }
+
+    private fun saveData(id : String, pw : String) {
+        var pref = this.getPreferences(0)
+        var editor = pref.edit()
+
+        editor.putString("KEY_id", edtLogin_id.text.toString()).apply()
+        editor.putString("KEY_pw", edtLogin_pw.text.toString()).apply()
+    }
+
+    private fun loadData() {
+        var pref = this.getPreferences(0)
+        var id = pref.getString("KEY_id", "")
+        var pw = pref.getString("KEY_pw", "")
+
+        if (id!!.length != 0 && pw!!.length != 0) {
+            edtLogin_id.setText(id)
+            edtLogin_pw.setText(pw)
+        }
 
     }
 
