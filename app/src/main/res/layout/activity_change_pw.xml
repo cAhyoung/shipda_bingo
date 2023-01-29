@@ -25,7 +25,8 @@
         android:layout_marginTop="50dp"
         android:hint="기존 비밀번호를 작성하세요"
         android:layout_gravity="center"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:inputType="textPassword"/>
 
     <TextView
         android:id="@+id/notPresentPwTv"
@@ -42,23 +43,40 @@
         android:layout_marginTop="30dp"
         android:hint="새로운 비밀번호를 작성하세요"
         android:layout_gravity="center"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:inputType="textPassword"/>
 
     <TextView
         android:id="@+id/rejectPwTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="비밀번호 양식에 맞지 않습니다.(영문+숫자 8~16자)"
         android:visibility="invisible"
-        android:padding="10dp"/>
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/newPwRe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="새로운 비밀번호를 다시한번 작성하세요"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:inputType="textPassword"/>
+
+    <TextView
+        android:id="@+id/rejectPwReTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="새로운 비밀번호가 일치하지 않습니다."
+        android:visibility="invisible"
+        android:padding="10dp" />
 
 
     <Button
         android:id="@+id/acceptBtn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="확인"
         android:layout_marginTop="30dp"
-        android:text="confirm"
         android:layout_gravity="center"/>
 
 </LinearLayout>

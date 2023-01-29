@@ -109,7 +109,6 @@ class MyPageFragment : Fragment() {
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
 
-
         }
 
         // 비밀번호 변경하기
@@ -118,6 +117,10 @@ class MyPageFragment : Fragment() {
             intent.putExtra("id", id)
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
+            activity?.supportFragmentManager
+                ?.beginTransaction()
+                ?.remove(this)
+                ?.commit()
 
         }
 

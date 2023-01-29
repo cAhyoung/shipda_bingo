@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar
 import com.example.happypig.DBManager
 import com.example.happypig.R
 import com.example.happypig.home.HomeActivity
+import com.example.happypig.home.HomeFragment
 
 class ChangeNick : AppCompatActivity() {
 
@@ -38,6 +39,8 @@ class ChangeNick : AppCompatActivity() {
             db.execSQL("UPDATE personnel SET nickname = '" + changeNick.text + "' WHERE id = '" + id + "';")
             db.close()
             Toast.makeText(this, "닉네임이 변경되었습니다", Toast.LENGTH_SHORT).show()
+            finish()
+
         }
 
 
