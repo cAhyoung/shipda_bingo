@@ -60,7 +60,6 @@ class HomeFragment : Fragment() {
 
 
         // 버튼 클릭 시 분리수거 방법
-
         btnTrash = view.findViewById(R.id.btnTrash)
         btnGlass = view.findViewById(R.id.btnGlass)
         btnPaper = view.findViewById(R.id.btnPaper)
