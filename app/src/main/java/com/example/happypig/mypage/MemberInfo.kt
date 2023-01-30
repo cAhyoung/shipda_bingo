@@ -35,6 +35,7 @@ class MemberInfo : AppCompatActivity() {
         nickTv = findViewById(R.id.nickTv)
         lvTv = findViewById(R.id.lvTv)
 
+        // db에서 각 정보 가져오기
         val cursor = db.rawQuery("SELECT * FROM personnel WHERE id = '" + id + "';",null)
         if (cursor.moveToNext()) {
 
@@ -45,6 +46,7 @@ class MemberInfo : AppCompatActivity() {
         }
         cursor.close()
 
+        // textview에 보여주기
         idTv.text = "아이디: $id"
         emailTv.text = "이메일: $email"
         nickTv.text = "닉네임: $nick"

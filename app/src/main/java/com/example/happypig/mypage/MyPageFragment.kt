@@ -63,11 +63,13 @@ class MyPageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        // 액티비티 끌어오기
+        // db 가져오기
         val view = inflater.inflate(R.layout.fragment_my_page, container, false)
         val hActivity = activity as HomeActivity
         val myHelper = DBManager(hActivity, "guruDB", null, 1)
 
-        // 상단 노출 정보
+        // 상단 노출 정보 보여주기 위한 과정
         var db = myHelper.readableDatabase
         var cursor = db.rawQuery("SELECT * FROM personnel WHERE id = '" + id + "';",null)
         if (cursor.moveToNext()) {
@@ -89,9 +91,6 @@ class MyPageFragment : Fragment() {
         btnChangePw = view.findViewById(R.id.btnChangePw)
         btnLogout = view.findViewById(R.id.btnLogOut)
         btnDeleteInfo = view.findViewById(R.id.btnDeleteInfo)
-
-
-
 
         // 회원 정보 확인하기
         btnMemberInfo.setOnClickListener {
@@ -117,10 +116,6 @@ class MyPageFragment : Fragment() {
             intent.putExtra("id", id)
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
-            activity?.supportFragmentManager
-                ?.beginTransaction()
-                ?.remove(this)
-                ?.commit()
 
         }
 

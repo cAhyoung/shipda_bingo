@@ -49,7 +49,7 @@ class ChangePw : AppCompatActivity() {
         rejectPwReTv = findViewById(R.id.rejectPwReTv)
         notPresentPwTv = findViewById(R.id.notPresentPwTv)
 
-
+        // db에서 비밀번호 가져오기
         cursor = db.rawQuery("SELECT pw FROM personnel WHERE id = '" + id + "';",null)
         if (cursor.moveToNext()) {
             dbPw = cursor.getString(cursor.getColumnIndex("pw")).toString()
@@ -63,6 +63,7 @@ class ChangePw : AppCompatActivity() {
         val pattern = Pattern.compile(pwPattern)
 
 
+        // 비밀번호 변경을 위한 조건들
         acceptBtn.setOnClickListener {
             val matcher = pattern.matcher(newPw.text.toString())
             // 첫번째 조건: 현재 비밀번호가 일치하는가? -> 한다
