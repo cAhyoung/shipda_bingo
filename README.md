@@ -58,16 +58,16 @@
 - **기능**
   - <a href="https://github.com/cAhyoung/shipda_bingo/wiki/Login%2C-Sign-up">로그인 및 회원가입 기능</a>   
   - <a href="https://github.com/cAhyoung/shipda_bingo/wiki/Find-ID%2C-PW">아이디, 비밀번호 찾기 기능</a>      
-  - <a href="">빙고 화면 기능</a>  
-  - <a href="">홈 화면 기능</a> 
+  - <a href="https://github.com/cAhyoung/shipda_bingo/wiki/Bingo">빙고 화면 기능</a>  
+  - <a href="https://github.com/cAhyoung/shipda_bingo/wiki/Home-Page">홈 화면 기능</a> 
   - <a href="">마이페이지 기능</a> 
 
 - **디자인**
   - <a href="">로그인 및 회원가입 디자인</a>       
   - <a href="">아이디, 비밀번호 찾기 디자인</a>      
-  - <a href="">빙고 화면 디자인</a>    
-  - <a href="">홈 화면 디자인</a> 
-  - <a href="">마이페이지 디자인</a>
+  - <a href="https://github.com/cAhyoung/shipda_bingo/wiki/Bingo_design">빙고 화면 디자인</a>    
+  - <a href="https://github.com/cAhyoung/shipda_bingo/wiki/Home_design">홈 화면 디자인</a> 
+  - <a href="https://github.com/cAhyoung/shipda_bingo/wiki/Mypage_design">마이페이지 디자인</a>
 
 ### 개발 과정 및 수정
 - **2023.01.31** 필요없는 파일 및 주석 정리 / wiki 문서 작성, readme 수정 및 정리
