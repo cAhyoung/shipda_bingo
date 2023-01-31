@@ -3,9 +3,9 @@
 
 
 ### 제작정보
-- 제작팀  **Guruchiosaurus**
+- 제작팀  **Guruchiosaurus** 
   - 디자인: 김서윤, 경재영
-  - 개발: 강명서, 조아영  
+  - 개발: 강명서, 조아영(팀장)  
   
 - 개발환경
   - minimum SDK : 23
