@@ -217,7 +217,7 @@ class lv3BingoFragment : Fragment() {
                     checks[i].visibility = View.INVISIBLE
                 }
 
-                bingoNum = bingoDetector(tv, checked)
+                bingoNum = bingoDetector(checked)
                 bingo.text = bingoNum.toString() + " 빙고!"
 
                 //빙고 개수에 따른 도장판 이미지
@@ -272,7 +272,7 @@ class lv3BingoFragment : Fragment() {
                 sqlitedb.close()
 
 
-                bingoNum = bingoDetector(tv, checked)
+                bingoNum = bingoDetector(checked)
                 bingo.text = "$bingoNum 빙고!"
 
 
@@ -332,7 +332,7 @@ class lv3BingoFragment : Fragment() {
         var randomize = view.findViewById<Button>(R.id.btnRandmoize)
         randomize.setOnClickListener {
             
-            reset(tv, checks, checked)
+            reset(checks, checked)
             bingo.text = "0 빙고!"
 
             //랜덤하게 재배치
@@ -375,7 +375,7 @@ class lv3BingoFragment : Fragment() {
         //리셋 버튼
         var reset = view.findViewById<Button>(R.id.btnReset)
         reset.setOnClickListener {
-            reset(tv, checks, checked)
+            reset(checks, checked)
             bingo.text = "0 빙고!"
 
             //테이블 업데이트, 모든 체크 플래그가 0으로(미체크)
@@ -463,7 +463,7 @@ class lv3BingoFragment : Fragment() {
     }
 
     //리셋 함수
-    private fun reset(tv : Array<TextView>, iv : Array<ImageView>, flag : Array<Boolean>) {
+    private fun reset(iv : Array<ImageView>, flag : Array<Boolean>) {
         for (i in 0..8){
             val index : Int = i
             iv[index].visibility = View.INVISIBLE
@@ -472,7 +472,7 @@ class lv3BingoFragment : Fragment() {
     }
 
     //빙고 디텍터 함수
-    private fun bingoDetector (tv : Array<TextView>, flag : Array<Boolean>) : Int {
+    private fun bingoDetector (flag : Array<Boolean>) : Int {
         var arr2d = Array<BooleanArray>(3,{BooleanArray(3)})
         var index = 0
 
