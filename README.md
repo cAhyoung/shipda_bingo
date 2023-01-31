@@ -56,7 +56,7 @@
 
 ### 어플리케이션 기능 및 디자인 (아직 문서가 작성되지 않아 연결된 링크는 없습니다.)
 - **기능**
-  - <a href="">로그인 및 회원가입 기능</a>   
+  - <a href="https://github.com/cAhyoung/shipda_bingo/wiki/Login%2C-Sign-up">로그인 및 회원가입 기능</a>   
   - <a href="">아이디, 비밀번호 찾기 기능</a>      
   - <a href="">빙고 화면 기능</a>  
   - <a href="">홈 화면 기능</a> 
