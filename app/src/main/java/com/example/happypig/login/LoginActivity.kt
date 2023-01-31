@@ -3,7 +3,6 @@ package com.example.happypig.login
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
-import android.content.SharedPreferences
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +11,6 @@ import android.widget.*
 import com.example.happypig.DBManager
 import com.example.happypig.R
 import com.example.happypig.home.HomeActivity
-import com.example.happypig.home.HomeActivity2
 import com.example.happypig.tutorial.tutorialActivity
 import java.util.*
 
@@ -59,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
         var pref = getSharedPreferences("checkFirst", Activity.MODE_PRIVATE)
         var checkFrist = pref.getBoolean("checkFirst",false)
 
-        //false일 경우 최초 실행
+        //false일 경우 최초 실행 -> 튜토리얼 실행
         if(!checkFrist) {
             var editor = pref.edit()
             editor.putBoolean("checkFirst", true)
@@ -70,25 +68,8 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
-        /*
-        //READ ME!!!!!!!!!!!!!!!============================================================!!!!!!!!!!!!!!!!!!!!!!!
-        //위의 IF문으로 최초 실행 판단 후 튜토리얼 액티비티를 한 번만 실행합니다.
-        //아래 ELSE문은 앱을 실행할 때마다 튜토리얼 액티비티를 실행하기 위한 코드입니다.
-        //디자인 작업 하실 때 각주 지우고 작업하시면서 실행하고 확인하시고
-        //완성됐으면 다시 ELSE문 전체 각주처리 해주세요
-        else {
-            var editor = pref.edit()
-            editor.putBoolean("checkFirst", true)
-            editor.apply()
-            finish()
 
-            intent = Intent(this, tutorialActivity::class.java)
-            startActivity(intent)
-        }
-        
-         */
-
-
+        //접속 기록이 있으면 아이디, 비밀번호값 가져오기
         loadData()
 
         //로그인 버튼 클릭
@@ -126,11 +107,6 @@ class LoginActivity : AppCompatActivity() {
                             //로그인 정보 저장 for 자동 로그인
                             saveData(user, pass)
 
-
-                            //Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
-                            //홈 화면으로 액티비티 전환하기
-                            //intent에 id 값 넣어서
-
                             //지난 접속 기록 가져오기
                             var dbYear : Int = 0
                             var dbMonth : Int = 0
@@ -138,7 +114,6 @@ class LoginActivity : AppCompatActivity() {
                             sqlitedb = dbManager.readableDatabase
                             cursor = sqlitedb.rawQuery("SELECT year, month, date FROM personnel WHERE id = '" + user + "';",null)
                             if(cursor.moveToNext()){
-
                                 dbYear = cursor.getInt(cursor.getColumnIndex("year"))
                                 dbMonth = cursor.getInt(cursor.getColumnIndex("month"))
                                 dbDate = cursor.getInt(cursor.getColumnIndex("date"))
@@ -156,6 +131,7 @@ class LoginActivity : AppCompatActivity() {
                             sqlitedb.execSQL("UPDATE personnel SET year = " + year + ", month = " + month + ", date = " + date + " WHERE id = '" + user + "';")
                             sqlitedb.close()
 
+                            //만보기 초기화를 위해 날짜가 변경되었는지 체크하기
                             if(date > dbDate){
                                 dateChangeFlag = true
                             }

@@ -12,7 +12,6 @@ import androidx.core.widget.addTextChangedListener
 import com.example.happypig.DBManager
 import com.example.happypig.R
 import com.example.happypig.home.HomeActivity
-import com.example.happypig.home.HomeActivity2
 import java.util.Date
 import java.util.regex.Pattern
 
@@ -89,15 +88,10 @@ class SignUpActivity : AppCompatActivity() {
 
 
         //dbManager 객체 받아오기
-        //얘 닫아야됨?
         dbManager = DBManager(this, "guruDB", null, 1)
-
-        //엥 얜 뭐임
-        var password: String
 
 
         //닉네임 체크
-
         edtSignUp_nickname.addTextChangedListener {
             //입력값이 있으면 체크
             img_check_nickname.setVisibility(View.VISIBLE)
@@ -118,8 +112,6 @@ class SignUpActivity : AppCompatActivity() {
                 //클래스 함수
                 signUpCheck.nickFlag = false
             }
-
-
         }
 
 
@@ -129,9 +121,6 @@ class SignUpActivity : AppCompatActivity() {
             var id: String = ""
 
             if (edtSignUp_id.length() == 0) {
-                //id 값이 null이라면 토스트 메시지 출력
-                //이거 나중에 지우기
-                Toast.makeText(this, "아이디를 먼저 입력해주세요", Toast.LENGTH_SHORT).show()
 
                 //경고 문구 출력
                 tvSignUp_warning_id.text = "아이디를 먼저 입력해주세요"
@@ -156,8 +145,6 @@ class SignUpActivity : AppCompatActivity() {
                     sqlitedb.rawQuery("SELECT id FROM personnel WHERE id = '" + id + "';", null)
 
                 if (cursor.moveToNext()) {
-                    //이미 존재하는 아이디라면 토스트 메시지를 띄운다
-                    Toast.makeText(this, "중복된 아이디입니다", Toast.LENGTH_SHORT).show()
 
                     //경고 문구 출력
                     tvSignUp_warning_id.text = "중복된 아이디입니다"
@@ -196,13 +183,10 @@ class SignUpActivity : AppCompatActivity() {
                         //클래스 함수
                         signUpCheck.idFlag = false
                     }
-
                 }
-
                 cursor.close()
                 sqlitedb.close()
             }
-
         }
 
 
@@ -230,7 +214,7 @@ class SignUpActivity : AppCompatActivity() {
                 //클래스 함수
                 signUpCheck.pwFlag = false
 
-                //합쳐진 코드 부분
+
                 //비밀번호 확인 부분
                 edtSignUp_pw2.addTextChangedListener {
                     //비밀번호 양식이 맞지 않은데 비밀번호 확인을 입력했을 때
@@ -238,6 +222,7 @@ class SignUpActivity : AppCompatActivity() {
                     tvSignUp_warning_pw2.visibility = View.VISIBLE
                     img_check_pw2.visibility = View.INVISIBLE
                     pw2Flag = false
+
 
                     //클래스 함수
                     signUpCheck.pwFlag = false
@@ -266,7 +251,7 @@ class SignUpActivity : AppCompatActivity() {
                 signUpCheck.isRead(nickFlag, idFlag, pwFlag, pw2Flag, emailFlag, agreeFlag)
 
 
-                //합쳐진 코드 부분
+
                 //비밀번호 확인 부분
                 edtSignUp_pw2.addTextChangedListener {
                     val input = edtSignUp_pw2.text.toString()
@@ -333,14 +318,6 @@ class SignUpActivity : AppCompatActivity() {
                     if (edtSignUp_pw2.length() == 0) {
                         tvSignUp_warning_pw2.visibility = View.INVISIBLE
                     }
-
-                    //비밀번호 입력이 삭제되면 경고메시지를 사라지게끔 하고 싶음
-                    /*
-                    edtSignUp_pw.addTextChangedListener {
-                        if(edtSignUp_pw.length() > 0) {
-                            tvSignUp_warning_pw2.visibility = View.INVISIBLE
-                        }
-                    }*/
                 }
             }
         }
@@ -351,10 +328,6 @@ class SignUpActivity : AppCompatActivity() {
 
 
             if (edtSignUp_email.length() == 0) {
-                //email 값이 null이라면 토스트 메시지 출력
-                //이거 나중에 지우기
-                //Toast.makeText(this, "이메일을 먼저 입력해주세요", Toast.LENGTH_SHORT).show()
-
 
                 //경고 문구 출력
                 tvSignUp_warning_email.text = "이메일을 먼저 입력해주세요"
@@ -408,9 +381,6 @@ class SignUpActivity : AppCompatActivity() {
                     )
 
                     if (cursor.moveToNext()) {
-                        //이미 존재하는 아이디라면 토스트 메시지를 띄운다
-                        Toast.makeText(this, "이미 가입된 이메일입니다", Toast.LENGTH_SHORT).show()
-
                         //경고 문구 출력
                         tvSignUp_warning_email.text = "이미 가입된 이메일입니다"
                         tvSignUp_warning_email.setVisibility(View.VISIBLE)
@@ -448,16 +418,11 @@ class SignUpActivity : AppCompatActivity() {
                             //클래스 함수
                             signUpCheck.emailFlag = false
                         }
-
                     }
-
                     cursor.close()
                     sqlitedb.close()
                 }
-
-
             }
-
         }
 
 
@@ -520,7 +485,6 @@ class SignUpActivity : AppCompatActivity() {
             intent.putExtra("id", id)
             startActivity(intent)
 
-            //Toast.makeText(this, "$nickname 님 회원가입이 완료되었습니다", Toast.LENGTH_SHORT).show()
 
         }
 
