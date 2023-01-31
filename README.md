@@ -63,8 +63,8 @@
   - <a href="">마이페이지 기능</a> 
 
 - **디자인**
-  - <a href="">로그인 및 회원가입 디자인</a>       
-  - <a href="">아이디, 비밀번호 찾기 디자인</a>      
+  - <a href="https://github.com/cAhyoung/shipda_bingo/wiki/Login,-Sign-up_design">로그인 및 회원가입 디자인</a>       
+  - <a href="https://github.com/cAhyoung/shipda_bingo/wiki/Find-ID,-PW_design">아이디, 비밀번호 찾기 디자인</a>      
   - <a href="https://github.com/cAhyoung/shipda_bingo/wiki/Bingo_design">빙고 화면 디자인</a>    
   - <a href="https://github.com/cAhyoung/shipda_bingo/wiki/Home_design">홈 화면 디자인</a> 
   - <a href="https://github.com/cAhyoung/shipda_bingo/wiki/Mypage_design">마이페이지 디자인</a>
