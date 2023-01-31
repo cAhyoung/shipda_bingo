@@ -51,8 +51,10 @@ class FindPwActivity : AppCompatActivity() {
 
         dbManager = DBManager(this, "guruDB", null, 1)
 
+        //아이디 입력이 변경되는지 체크하는 리스너
         edtFindPw_id.addTextChangedListener {
-
+            //아이디가 먼저 입력되고 이메일이 입력되는 경우
+            //이메일 입력이 변경되는지 체크하는 리스너
             edtFindPw_email.addTextChangedListener{
                 if (edtFindPw_id.text.length != 0 && edtFindPw_email.text.length != 0) {
                     btnFindPw_findPw.isEnabled = true
@@ -63,8 +65,11 @@ class FindPwActivity : AppCompatActivity() {
 
             }
         }
-        edtFindPw_email.addTextChangedListener {
 
+        //이메일 입력이 변경되는지 체크하는 리스너
+        edtFindPw_email.addTextChangedListener {
+            //이메일이 먼저 입력되고 아이디가 입력되는 경우
+            //아이디 입력이 변경되는지 체크하는 리스너
             edtFindPw_id.addTextChangedListener{
                 if (edtFindPw_id.text.length != 0 && edtFindPw_email.text.length != 0) {
                     btnFindPw_findPw.isEnabled = true
@@ -76,7 +81,7 @@ class FindPwActivity : AppCompatActivity() {
             }
         }
 
-
+        //비밀번호 찾기 버튼 클릭 이벤트
         btnFindPw_findPw.setOnClickListener {
             val inputId = edtFindPw_id.text.toString()
             val inputEmail = edtFindPw_email.text.toString()

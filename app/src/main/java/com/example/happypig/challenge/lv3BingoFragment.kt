@@ -19,19 +19,8 @@ import androidx.appcompat.app.AlertDialog
 import com.example.happypig.DBManager
 import com.example.happypig.R
 import com.example.happypig.home.HomeActivity
-import com.example.happypig.home.HomeActivity2
 import java.util.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [lv3BingoFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class lv3BingoFragment : Fragment() {
 
     lateinit var dbManager: DBManager
@@ -47,15 +36,12 @@ class lv3BingoFragment : Fragment() {
     lateinit var back : Button
     lateinit var next : Button
 
-    // TODO: Rename and change types of parameters
     private var id: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             id = it.getString("id")
-            param2 = it.getString(ARG_PARAM2)
         }
     }
 
@@ -64,7 +50,7 @@ class lv3BingoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         val view = inflater.inflate(R.layout.fragment_lv3_bingo, container, false)
 
         dbManager = DBManager(context, "guruDB", null, 1)
@@ -80,7 +66,7 @@ class lv3BingoFragment : Fragment() {
         next = view.findViewById(R.id.next)
 
 
-        var checked = Array<Boolean>(9) { false }
+        var checked = Array<Boolean>(9) { false } //빙고 체크 여부 저장하는 배열
 
         val tvId = arrayOf(
             R.id.tv1,
@@ -111,6 +97,7 @@ class lv3BingoFragment : Fragment() {
         var bingo = view.findViewById<TextView>(R.id.bingo)
         var bingoNum: Int
 
+        //랜덤 챌린지
         var randChal = resources.getStringArray(R.array.level3)
 
         var level = 3
@@ -128,8 +115,8 @@ class lv3BingoFragment : Fragment() {
         sqlitedb.close()
 
 
-        var levelupFlag = false
-        var isFirst = true
+        var levelupFlag = false //레벨업 여부 판단
+        var isFirst = true //최초실행 판단
         val homeActivity = activity as HomeActivity
 
         if (userlevel > level) {
@@ -157,13 +144,15 @@ class lv3BingoFragment : Fragment() {
             userlevel = 3
             val random = Random()
 
-            //DB
+            //테이블에 새로운 행 삽입
             sqlitedb = dbManager.writableDatabase
             sqlitedb.execSQL("INSERT INTO bingo3 VALUES ('" + id + "', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);")
             sqlitedb.close()
 
 
             //난수 생성 후 string 배열에 접근
+            //리스트를 사용하여 0~16까지 중복되지 않은 숫자 9개를 선정
+            //난수 9개로 배열에 접근하여 랜덤하게 챌린지를 받아옴
             val list = mutableListOf<Int>()
             var index = 0
             while (list.size < 9) {
@@ -175,7 +164,8 @@ class lv3BingoFragment : Fragment() {
                 list.add(randomnum)
                 tv[index].text = randChal[randomnum]
 
-                //db
+                //db 업데이트
+                //텍스트뷰가 출력하는 랜덤챌린지의 인덱스 값을 삽입
                 sqlitedb = dbManager.writableDatabase
                 sqlitedb.execSQL("UPDATE bingo3 set " +row + " = " + randomnum + " where id = '" + id + "';")
 
@@ -191,27 +181,46 @@ class lv3BingoFragment : Fragment() {
             for ( i in 0..8){
                 var row : String = "tv" + i
                 var index : Int = 0
+                
                 sqlitedb = dbManager.writableDatabase
                 cursor = sqlitedb.rawQuery("SELECT "+ row + " FROM bingo3 WHERE id = '" + id + "';", null)
-                if (cursor.moveToNext()) index = cursor.getInt(cursor.getColumnIndex(row))
+                
+                if (cursor.moveToNext()) {
+                    index = cursor.getInt(cursor.getColumnIndex(row))
+                }
+                
                 tv[i].text = randChal[index].toString()
+                
                 cursor.close()
 
+                //빙고가 체크되었는지 기록하는 플래그
+                //예) 빙고의 1번 칸이 체크되면 flag0은 1임
                 row = "flag" + i
                 cursor = sqlitedb.rawQuery("SELECT "+ row + " FROM bingo3 WHERE id = '" + id + "';", null)
+                
                 if (cursor.moveToNext()){
                     var flag = cursor.getInt(cursor.getColumnIndex(row))
-                    if (flag == 0) checked[i] = false
-                    else checked[i] = true
+                    if (flag == 0) {
+                        checked[i] = false
+                    }
+                    else {
+                        checked[i] = true //테이블의 플래그 값을 가져와 checked 배열에 저장함
+                    }
                 }
                 cursor.close()
 
-                if(checked[i]) checks[i].visibility = View.VISIBLE
-                else checks[i].visibility = View.INVISIBLE
+                //해당 빙고칸의 체크 여부에 따라 이미지 뷰의 visibility를 수정
+                if(checked[i]) {
+                    checks[i].visibility = View.VISIBLE
+                }
+                else {
+                    checks[i].visibility = View.INVISIBLE
+                }
 
                 bingoNum = bingoDetector(tv, checked)
                 bingo.text = bingoNum.toString() + " 빙고!"
 
+                //빙고 개수에 따른 도장판 이미지
                 if (bingoNum >=2) {
                     iv1_b.visibility = View.INVISIBLE
                     iv1_c.visibility = View.VISIBLE
@@ -248,10 +257,12 @@ class lv3BingoFragment : Fragment() {
         //빙고 게임 진행
         for ( i  in 0 .. 8) {
             val index: Int = i
+
+            //텍스트뷰마다 리스너 등록
             tv[index].setOnClickListener {
                 clicked(tv[index], checks[index], checked, index)
 
-                //db
+                //테이블 업데이트(체크 여부)
                 var row : String = "flag" + i
                 var value : Int
                 if (checked[index]) value = 1
@@ -265,6 +276,7 @@ class lv3BingoFragment : Fragment() {
                 bingo.text = "$bingoNum 빙고!"
 
 
+                //레벨업
                 if (!levelupFlag){
                     userlevel = levelUp(bingoNum, level, view.context) //디비 업데이트하기
                     if (userlevel == 4){
@@ -277,6 +289,7 @@ class lv3BingoFragment : Fragment() {
                     }
                 }
 
+                //도장판 이미지
                 if (bingoNum >=2) {
                     iv1_b.visibility = View.INVISIBLE
                     iv1_c.visibility = View.VISIBLE
@@ -302,14 +315,14 @@ class lv3BingoFragment : Fragment() {
                     iv3_b.visibility = View.VISIBLE
                     iv3_c.visibility = View.INVISIBLE
                 }
-
-
             }
         }
 
+        //이전 단계로
         back.setOnClickListener {
             homeActivity.changeFragment(3)
         }
+        //다음 단계로
         next.setOnClickListener {
             Toast.makeText(homeActivity, "Coming Soon!",Toast.LENGTH_SHORT).show()
         }
@@ -318,13 +331,14 @@ class lv3BingoFragment : Fragment() {
         //재배치 button
         var randomize = view.findViewById<Button>(R.id.btnRandmoize)
         randomize.setOnClickListener {
+            
             reset(tv, checks, checked)
             bingo.text = "0 빙고!"
-
 
             //랜덤하게 재배치
             val random = Random()
 
+            //난수와 리스트 사용
             val list = mutableListOf<Int>()
             var index = 0
             while (list.size < 9) {
@@ -364,6 +378,7 @@ class lv3BingoFragment : Fragment() {
             reset(tv, checks, checked)
             bingo.text = "0 빙고!"
 
+            //테이블 업데이트, 모든 체크 플래그가 0으로(미체크)
             for (i in 0..8){
                 var row = "flag" + i
                 sqlitedb = dbManager.writableDatabase
@@ -381,26 +396,8 @@ class lv3BingoFragment : Fragment() {
         return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment lv3BingoFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            lv3BingoFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 
+    //클릭 이벤트 함수
     @SuppressLint("Range")
     private fun clicked(tv : TextView, iv : ImageView, flag : Array<Boolean>, num : Int) {
         when (flag[num]) {
@@ -421,8 +418,10 @@ class lv3BingoFragment : Fragment() {
             iv.visibility = View.INVISIBLE
         }
 
+        //빙고칸이 체크되었다면
         if (flag[num]) {
 
+            //텍스트뷰가 출력하는 랜덤챌린지의 인덱스 값을 가져옴 
             val row = "tv"+num
 
             dbManager = DBManager(context, "guruDB", null, 1)
@@ -432,6 +431,7 @@ class lv3BingoFragment : Fragment() {
             if (cursor.moveToNext()){
                 val web = cursor.getInt(cursor.getColumnIndex(row))
                 when (web) {
+                    //랜덤 챌린지 인덱스의 0~4번은 웹 페이지가 열려야함
                     0 -> {
                         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.bbc.com/korean/international-61864499"))
                         startActivity(intent)
@@ -462,22 +462,23 @@ class lv3BingoFragment : Fragment() {
 
     }
 
+    //리셋 함수
     private fun reset(tv : Array<TextView>, iv : Array<ImageView>, flag : Array<Boolean>) {
         for (i in 0..8){
             val index : Int = i
-            //tv[index].setTextColor(Color.BLACK)
             iv[index].visibility = View.INVISIBLE
             flag[index] = false
         }
     }
 
+    //빙고 디텍터 함수
     private fun bingoDetector (tv : Array<TextView>, flag : Array<Boolean>) : Int {
         var arr2d = Array<BooleanArray>(3,{BooleanArray(3)})
         var index = 0
-        //var bingoArray = Array<Boolean>(8) {false}
 
         var bingo = 0
 
+        //1차원 배열을 받아와서 2차원 배열에 저장
         for(i in 0..2){
             for (j in 0..2) {
                 arr2d[i][j] = flag[index]
@@ -486,17 +487,19 @@ class lv3BingoFragment : Fragment() {
         }
 
         for ( i in 0..2){
-            if(arr2d[i][0] && arr2d[i][1] && arr2d[i][2]) bingo++
-            if(arr2d[0][i] && arr2d[1][i] && arr2d[2][i]) bingo++
+            if(arr2d[i][0] && arr2d[i][1] && arr2d[i][2]) bingo++ //행 빙고
+            if(arr2d[0][i] && arr2d[1][i] && arr2d[2][i]) bingo++ //열 빙고
         }
 
+        //대각선 빙고
         if (arr2d[0][0] && arr2d[1][1] && arr2d[2][2]) bingo++
         if (arr2d[0][2] && arr2d[1][1] && arr2d[2][0]) bingo++
 
-
+        //빙고 개수 리턴
         return bingo
     }
 
+    //레벨업 함수
     private fun levelUp(bingoNum : Int, lv : Int, context: Context) : Int{
         var level = lv
         if (bingoNum >= 4) {

@@ -22,15 +22,11 @@ class FindIdActivity : AppCompatActivity() {
     lateinit var sqlitedb: SQLiteDatabase
 
     lateinit var edtFindId_email : EditText
-    //lateinit var edtFindId_num : EditText
 
     lateinit var btnFindId_sendEmail : Button
-    //lateinit var btnFindId_authenticate : Button
-    //lateinit var btnFindId_findId : Button
 
     lateinit var tvFindId_Id : TextView
     lateinit var tvFindId_warningEmail : TextView
-    //lateinit var tvFindId_warningNum : TextView
 
     lateinit var layoutFindId_layout : LinearLayout
 
@@ -41,19 +37,12 @@ class FindIdActivity : AppCompatActivity() {
         setContentView(R.layout.activity_find_id)
 
         edtFindId_email = findViewById(R.id.edtFindId_email)
-        //edtFindId_num = findViewById(R.id.edtFindId_num)
         btnFindId_sendEmail = findViewById(R.id.btnFindId_sendEmail)
-        //btnFindId_authenticate = findViewById(R.id.btnFindId_authenticate)
-        //btnFindId_findId = findViewById(R.id.btnFindId_findId)
         tvFindId_Id = findViewById(R.id.tvFindId_Id)
         tvFindId_warningEmail = findViewById(R.id.tvFindId_warningEmail)
-        //tvFindId_warningNum = findViewById(R.id.tvFindId_warningNum)
         layoutFindId_layout = findViewById(R.id.layoutFindId_layout)
 
         dbManager = DBManager(this, "guruDB", null, 1)
-
-
-        //인증번호 전송
 
         //입력값이 들어오면 버튼 활성화
         edtFindId_email.addTextChangedListener {

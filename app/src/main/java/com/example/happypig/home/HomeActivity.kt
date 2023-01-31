@@ -24,7 +24,6 @@ import com.example.happypig.challenge.lv1BingoFragment
 import com.example.happypig.challenge.lv2BingoFragment
 import com.example.happypig.challenge.lv3BingoFragment
 import com.example.happypig.mypage.MyPageFragment
-import com.example.happypig.settingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
 
@@ -50,13 +49,12 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
 
     lateinit var tvmanbogiNum: TextView
     lateinit var manbogiReset: Button
-    //lateinit var tvPoint : TextView
     lateinit var layoutForManbogi : LinearLayout
 
+    //현재 걸음 수
     var currentSteps = 0
-    //var points = 0
-    //val startDate = Date()
 
+    //현재 시간(연, 월, 일)
     var currentYear = 0
     var currentMonth= 0
     var currentDate = 0
@@ -90,8 +88,6 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        //loadFragment(homeFragment)
-
         id
         var lv = 0
 
@@ -104,6 +100,7 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
         lv3 = lv3BingoFragment()
         myPage = MyPageFragment()
 
+        //프래그먼트 전환할 때 id값 넣어서
         val bundle = Bundle()
         bundle.putString("id", id)
 
@@ -115,7 +112,7 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
 
         container1 = findViewById(R.id.fragmentContainer)
 
-        //처음으로 커밋되는 프래그먼트... 레벨에 따라ㅁㄴ
+        //처음으로 커밋되는 프래그먼트... 레벨에 따라 다름
         sqlitedb = dbManager.readableDatabase
         var cursor : Cursor
         cursor = sqlitedb.rawQuery("SELECT lv FROM personnel WHERE id = '" + id + "';", null)
@@ -131,6 +128,7 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
         if(lv == 2) fragmentManager.beginTransaction().replace(R.id.fragmentContainer, lv2).commit()
         if(lv == 3) fragmentManager.beginTransaction().replace(R.id.fragmentContainer, lv3).commit()
 
+        //하단 네비게이션
         btmNav = findViewById(R.id.btmNavView) as BottomNavigationView
 
 
@@ -154,6 +152,7 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
                     true
                 }
                 R.id.bingo -> {
+                    //레벨에 따라 전환되는 빙고 프래그먼트가 다름
                     if (lv <= 1) changeFragment(2)
                     if (lv == 2) changeFragment(3)
                     if (lv >=3 ) changeFragment(4)
@@ -169,29 +168,6 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
             }
 
         }
-
-        /*
-        btmNav.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.home -> {
-                    loadFragment(homeFragment)
-                    true
-                }
-                R.id.bingo -> {
-                    loadFragment(challengeFragment)
-                    true
-                }
-                R.id.mypage -> {
-                    loadFragment(myPageFragment)
-                    true
-                }
-                else -> {
-                    true
-                }
-            }
-        }
-
-         */
 
 
         //만보기
@@ -278,15 +254,7 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
         }
 
     }
-    /*
-    // fragment 불러오는 함수
-    private fun loadFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragmentContainer, fragment)
-        transaction.commit()
-    }
 
-     */
 
     @SuppressLint("Range")
     override fun onSensorChanged(event: SensorEvent?) {
@@ -296,11 +264,17 @@ class HomeActivity : AppCompatActivity(), SensorEventListener {
                 if (event.values[0] == 1.0f) {
                     // 센서 이벤트가 발생할때 마다 걸음수 증가
 
-                    if(currentSteps >= 1000) currentSteps = 10000
-                    else currentSteps++;
+                    //만보 이상 걸으면 더이상 걸음수가 증가하지 않음
+                    if(currentSteps >= 1000) {
+                        currentSteps = 10000
+                    }
+                    else {
+                        currentSteps++
+                    };
 
                     tvmanbogiNum.text = "$currentSteps"
 
+                    //디비의 걸음수 업데이트
                     sqlitedb = dbManager.writableDatabase
                     sqlitedb.execSQL("UPDATE personnel SET manbogi = " + currentSteps + " WHERE id = '" + id + "';")
                     sqlitedb.close()
