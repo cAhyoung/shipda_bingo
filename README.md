@@ -15,8 +15,6 @@
 - 개발 언어
   - Kotlin 1.8.0    
   
-- 참고사항
-  - 처음 아이디어 이름으로 프로젝트를 만들어서 레포지토리(shipda_bingo) 이름과 프로젝트(happypig) 이름이 맞지 않습니다.
   
 ### 개발 의도
 #### 2023 겨울방학 Programming GURU2 Android 프로젝트   
